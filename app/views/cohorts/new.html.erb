@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+  
+  <h1>Add your cohort</h1>
+  <div class="alert alert-dismissible alert-success">
+    <p>cohort name should match the name of the cohort's GitHub repo.</p>
+    <p>for example, if the cohort's repo '/learn-co-curriculu/web-1115',</p>
+    <p>name your cohort 'web-1115'</p>
+  </div>
+  
+  <div class="form-horizontal">
+    <%= form_for @cohort do |f| %>
+      <%= render partial: 'form_fields', locals: {f: f} %>
+      <%= f.submit "Create Cohort", class: "btn btn-primary", style: "width: 100%; margin-top: 20px" %>
+    <% end %>
+  </div>
+</div>  
+

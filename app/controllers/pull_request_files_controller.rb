@@ -1,0 +1,2 @@
+class PullRequestFilesController < ApplicationController
+end
