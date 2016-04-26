@@ -1,3 +1,32 @@
 // Place all the styles related to the cohorts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.cohort-index {
+  list-style: none;
+  text-align: center;
+  padding-right: 40px;
+}
+
+#cohort-title {
+  text-align: center;
+}
+
+#cohort-name {
+  text-align: center;
+}
+
+.cohort-well {
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+
+}
+
+.cohort-show-child {
+  padding-left: 10%
+}

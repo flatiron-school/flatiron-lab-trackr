@@ -1,1 +1,6 @@
-<%= render partial: "cohorts/cohort", locals: {cohort: @cohort} %>
+<h2 id="cohort-name"><%= @cohort.name %></h2>
+<div class="col-md-12 cohort-well"> 
+  <%= render partial: "cohorts/cohort", locals: {cohort: @cohort} %>
+  <%= render partial: "labs/lab", collection: @cohort.labs %>
+</div>
+

@@ -1,1 +1,8 @@
-<%= render partial: "cohorts/cohort", collection: @cohorts %>
+<h1 id="cohort-title">Cohorts</h1>
+<div class="well">
+  <ul class="cohort-index">
+    <% @cohorts.each do |c| %>
+     <li><h2><%= link_to c.name, cohort_path(c) %></h2></li>
+    <% end %>
+  </ul>
+</div>
