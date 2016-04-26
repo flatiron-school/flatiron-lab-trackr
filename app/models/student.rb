@@ -3,6 +3,10 @@ class Student < ApplicationRecord
   has_many :pull_requests
   has_many :labs, through: :pull_requests
 
+  def to_param
+    self.full_name.downcase.gsub(" ", "-")
+  end
+
   def self.find_or_create_from_row(params)
     cols = self.columns.map {|col| col.name}
     params.delete_if {|key| !cols.include?(key)}
