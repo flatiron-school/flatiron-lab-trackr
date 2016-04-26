@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "cohorts#index"
   resources :labs
   resources :pull_request_files
   resources :pull_requests
