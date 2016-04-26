@@ -11,15 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 20160425205842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cohorts", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "roster_csv_file_name"
+    t.string   "roster_csv_content_type"
+    t.integer  "roster_csv_file_size"
+    t.datetime "roster_csv_updated_at"
   end
 
   add_index "cohorts", ["name"], name: "index_cohorts_on_name", using: :btree
