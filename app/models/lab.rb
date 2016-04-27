@@ -12,4 +12,5 @@ class Lab < ApplicationRecord
   def slugify
     self.slug = self.name.strip.downcase.gsub(" ", "-")
   end
+
 end
