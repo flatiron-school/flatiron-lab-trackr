@@ -3,12 +3,9 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-
-  <%= f.collection_select(:cohort_id, Cohort.all, :id, :name) %>
+  <%= f.label :repo %>
+  <%= f.text_field :repo %>
 
   <%= f.submit %>
 <% end %>
 
-<!-- collection_select(object, method, collection, value_method, text_method, options = {}, html_options = {}) public -->

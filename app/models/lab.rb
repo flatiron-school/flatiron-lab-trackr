@@ -1,6 +1,6 @@
 class Lab < ApplicationRecord
   belongs_to :cohort
-  validates :url, presence: true
+  validates :repo, presence: true, uniqueness: true
 
   before_create :slugify
 
