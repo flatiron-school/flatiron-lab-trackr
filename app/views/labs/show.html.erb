@@ -1,3 +1,7 @@
 <%= @lab.name %>
 
-<%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post" %>
+<%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", class: "btn btn-default" %>
+
+<ul>
+<%= render partial: "pull_requests/pull_request", collection: @lab.pull_requests %>
+</ul>
