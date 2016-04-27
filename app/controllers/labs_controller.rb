@@ -9,12 +9,14 @@ class LabsController < ApplicationController
 
   def new
     @lab = Lab.new
+    @cohort = Cohort.find_by(name: params[:cohort_slug])
   end
 
   def create
+    binding.pry
     lab = Lab.new(lab_params)
     if lab.save
-      Adapters::GitHubWrapper
+      Adapters::GitHubWrapper.new.get_repo_create_date(lab.url)
       redirect_to lab
     else
       redirect_to new_lab_path

@@ -1,6 +1,6 @@
 module Adapters
   class GitHubWrapper
-    
+
     def initialize
       configure_client
     end
