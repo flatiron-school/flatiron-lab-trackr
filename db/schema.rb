@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425205842) do
+ActiveRecord::Schema.define(version: 20160427032316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,12 @@ ActiveRecord::Schema.define(version: 20160425205842) do
 
   create_table "labs", force: :cascade do |t|
     t.string   "name"
-    t.string   "url"
+    t.string   "repo"
     t.integer  "cohort_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "slug"
+    t.datetime "deploy_date"
   end
 
   add_index "labs", ["cohort_id"], name: "index_labs_on_cohort_id", using: :btree
@@ -41,12 +43,12 @@ ActiveRecord::Schema.define(version: 20160425205842) do
   create_table "pull_request_files", force: :cascade do |t|
     t.string   "name"
     t.string   "content"
-    t.integer  "pull_requests_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "pull_request_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "pull_request_files", ["pull_requests_id"], name: "index_pull_request_files_on_pull_requests_id", using: :btree
+  add_index "pull_request_files", ["pull_request_id"], name: "index_pull_request_files_on_pull_request_id", using: :btree
 
   create_table "pull_requests", force: :cascade do |t|
     t.string   "url"
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160425205842) do
     t.integer  "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "pr_number"
   end
 
   add_index "pull_requests", ["lab_id"], name: "index_pull_requests_on_lab_id", using: :btree
@@ -71,7 +74,7 @@ ActiveRecord::Schema.define(version: 20160425205842) do
   add_index "students", ["cohort_id"], name: "index_students_on_cohort_id", using: :btree
 
   add_foreign_key "labs", "cohorts"
-  add_foreign_key "pull_request_files", "pull_requests", column: "pull_requests_id"
+  add_foreign_key "pull_request_files", "pull_requests"
   add_foreign_key "pull_requests", "labs"
   add_foreign_key "pull_requests", "students"
   add_foreign_key "students", "cohorts"
