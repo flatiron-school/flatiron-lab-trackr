@@ -1,4 +1,6 @@
-<div class="hidden student-<%= pull_request_file.student.id %>">
-<li><em><%= pull_request_file.name %></em></li>
-<li><pre class="prettyprint lang-ruby linenums"><code><%= pull_request_file.content %></code></pre></li>
+<div class="panel panel-default hidden student-<%= pull_request_file.student.id %>">
+  <div class="panel-heading"><h4 class="panel-title"><%= pull_request_file.name %></h4></div>
+  <div class="panel-body">
+   <pre class="prettyprint lang-ruby linenums"><code><%= pull_request_file.content %></code></pre>
+  </div>
 </div>

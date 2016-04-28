@@ -3,5 +3,8 @@
 <%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", class: "btn btn-default" %>
 
 <ul>
-<%= render partial: "pull_requests/pull_request", collection: @lab.pull_requests %>
+  <%@lab.pull_requests.each do |pull_request|%>
+    <li><h3><%= pull_request.student.full_name %></h3></li>
+    <%= render partial: "pull_requests/pull_request", locals: {pull_request: pull_request} %>
+  <%end%>
 </ul>
