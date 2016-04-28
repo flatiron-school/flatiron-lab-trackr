@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1><%= @lab.name %><small><%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", class: "btn btn-default" %></small></h1>
+  <h1 id="lab-header"><%= @lab.name %><%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", class: "btn btn-default"%></h1>
 </div>
 
 

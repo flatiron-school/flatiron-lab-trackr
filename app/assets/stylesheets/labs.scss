@@ -7,3 +7,38 @@
   column-count: 3;
   list-style: none;
 }
+
+#select-files-btn {
+  
+  -webkit-transition-duration: 0.5s;
+}
+
+
+.rotate {
+    transform: rotate(-180deg);
+    /*transform: rotate(180deg);*/
+    transition: .3s;
+}
+.rotate-reset {
+    transform: rotate(0deg);
+    transition: .3s;
+}
+
+h1#lab-header > form.button_to {
+  display: inline;
+  margin-left: 5%
+}
+
+#select-files-btn {
+  height: 20px;
+}
+
+
+#select-files-btn > span.glyphicon.glyphicon-menu-down {
+  bottom: 5px;
+  top: initial;
+}
+
+
+
+
