@@ -3,13 +3,8 @@
 </div>
 
 
-<div class="panel">
-  <div class="panel-heading"><h1 class="panel-title">Select files to view</h1></div>
-    <ul id="filename-form-list">
-    <%@lab.files.each do |f|%>
-      <li><input type="checkbox" value="<%=f%>"> <%=f%></li>
-    <%end%>
-    </ul>
+<div id="file-select">
+  <%= render partial: "labs/lab_files", locals: {lab: @lab}%>
 </div>
 
 <ul>

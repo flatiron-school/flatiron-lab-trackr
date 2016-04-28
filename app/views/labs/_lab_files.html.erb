@@ -1,0 +1,14 @@
+<div class="panel">
+  <div class="panel-heading">
+    <h1 class="panel-title">Select files to view  
+      <button class="btn btn-info" data-id="lab-files-down"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+    </h1>
+  </div>
+  <div data-id="lab-files" class="hidden">
+    <ul id="filename-form-list">
+    <%lab.files.each do |f|%>
+      <li><input type="checkbox" value="<%=f%>"> <%=f%></li>
+    <%end%>
+    </ul>
+  </div>
+</div>
