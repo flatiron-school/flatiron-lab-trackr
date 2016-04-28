@@ -1,10 +1,21 @@
-<%= @lab.name %>
+<div class="page-header">
+  <h1><%= @lab.name %><small><%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", class: "btn btn-default" %></small></h1>
+</div>
 
-<%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", class: "btn btn-default" %>
+
+<div class="panel">
+  <div class="panel-heading"><h1 class="panel-title">Select files to view</h1></div>
+    <ul id="filename-form-list">
+    <%@lab.files.each do |f|%>
+      <li><input type="checkbox" value="<%=f%>"> <%=f%></li>
+    <%end%>
+    </ul>
+</div>
 
 <ul>
   <%@lab.pull_requests.each do |pull_request|%>
     <li><h3><%= pull_request.student.full_name %></h3></li>
     <%= render partial: "pull_requests/pull_request", locals: {pull_request: pull_request} %>
+
   <%end%>
 </ul>

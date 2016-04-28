@@ -13,4 +13,9 @@ class Lab < ApplicationRecord
     self.slug = self.name.strip.downcase.gsub(" ", "-")
   end
 
+  def files
+    filenames = self.pull_requests.map {|pr| pr.pull_request_files}.flatten.pluck(:name).map!(&:downcase).delete_if {|f| f.start_with?("db/")}
+    filenames.map {|filename| filename.split("/").last}.uniq
+  end
+
 end
