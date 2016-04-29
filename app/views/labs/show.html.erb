@@ -7,7 +7,7 @@
   <%= render partial: "labs/lab_files", locals: {lab: @lab}%>
 </div>
 
-<ul>
+<ul id="pull_request_list">
   <%@lab.pull_requests.each do |pull_request|%>
     <li><h3><%= pull_request.student.full_name %></h3></li>
     <%= render partial: "pull_requests/pull_request", locals: {pull_request: pull_request} %>

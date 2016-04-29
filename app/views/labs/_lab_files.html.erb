@@ -7,8 +7,11 @@
   <div data-id="lab-files" style="display: none;">
     <ul id="filename-form-list">
     <%lab.files.each do |f|%>
-      <li><input type="checkbox" value="<%=f%>"> <%=f%></li>
+      <li><input class="file-checkbox" type="checkbox" data-id="selected-files" value="<%=f%>"> <%=f%></li>
     <%end%>
     </ul>
+    <div id="lab-files-submit-btn" data-id="lab-files-submit">
+      <button class="btn btn-info">submit</button>
+    </div>
   </div>
 </div>

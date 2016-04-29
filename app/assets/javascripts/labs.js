@@ -1,27 +1,35 @@
 $(document).ready(function() {
-  addFileSelectListener();
   $("[data-id='lab-files']").hide();
+  $("[data-class='pr-file'").hide();
+  addFileSelectListener();
+  addPRFileListener();
+
 })
 
 function addFileSelectListener(){
   $("[data-id='lab-files-down']").on("click", function(e){
-    // debugger;
     e.preventDefault;
     e.stopPropagation;
-    // debugger;
     $("[data-id='lab-files-down']").toggleClass('rotate');
     $("[data-id='lab-files-down']").toggleClass('rotate-reset');
-    // this.style.transform = "rotate(180deg)";
-    
-    // debugger;
-    // var btn = e.toElement;
-    // btn.rotate();
-    // var parent = btn.parentElement;
-    // btn.remove();
-    // parent.append('button class="btn btn-info" data-id="lab-files-down"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>')
     $("[data-id='lab-files']").slideToggle("slow")
-    // var studentPRFiles = btn.getAttribute('data-id')
-    // $("." + studentPRFiles).toggleClass('hidden');
+  })
+}
+
+function addPRFileListener(){
+  $("[data-id='lab-files-submit']").on("click", function(e){
+    e.preventDefault;
+    e.stopPropagation;
+    var fileNames = $("[data-id='selected-files']:checked").map(function(i, box){
+      var dataId = box.value
+      $("[data-id='" + dataId + "'][style='display: none;']").slideToggle('slow')
+    })
+
+    var fileNames = $("[data-id='selected-files']:not(:checked)").map(function(i, box){
+      var dataId = box.value
+      debugger;
+      $("[data-id='" + dataId + "'][style='display: block;']").toggleClass('hidden')
+    })
   })
 }
 
