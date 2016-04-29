@@ -39,8 +39,26 @@ h1#lab-header > form.button_to {
   top: initial;
 }
 
-#select-filed-btn:focus {
+/*#select-filed-btn:focus {
   outline:0;
+}*/
+
+button#select-files-btn.btn.btn-info.rotate:active,
+button#select-files-btn.btn.btn-info.rotate:focus,
+button#select-files-btn.btn.btn-info.rotate:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+button#select-files-btn.btn.btn-info.rotate-reset:active,
+button#select-files-btn.btn.btn-info.rotate-reset:focus,
+button#select-files-btn.btn.btn-info.rotate-reset:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 #lab-files-submit-btn {
