@@ -6,6 +6,7 @@ class PullRequestsController < ApplicationController
 
     respond_to do |f|
       f.js
+      f.html
     end
   end
 end

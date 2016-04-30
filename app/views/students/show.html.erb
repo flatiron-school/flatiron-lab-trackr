@@ -3,10 +3,10 @@
 </div>
 
 <div class="row">
-  <ul>
+  <ul id="pull_request_list">
     <%@student.pull_requests.sort_by {|pr| pr.lab.deploy_date}.each do |pr|%>
-      <li><%=pr.lab.name%></li>
-      <%= render partial: 'pull_requests/pull_request', locals: {pull_request: pr}%>
+      <li><h3><%=pr.lab.name%></li></h3>
+      <%= render partial: 'pull_requests/pull_request', locals: {student: @student, pull_request: pr}%>
     <%end%>
   </ul>
 

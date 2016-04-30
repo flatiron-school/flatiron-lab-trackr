@@ -18,7 +18,7 @@ module Adapters
       prs = client.pull_requests("learn-co-students/#{repo_name}")
       prs = prs.collect do |pr| 
         student = Student.find_by(github_username: pr.user.login)
-        PullRequest.find_or_create_by(student: student, lab: lab, pr_number: pr.url.split("/").last)         
+        PullRequest.find_or_create_by(student: student, lab: lab, pr_number: pr.url.split("/").last, url: pr.url)         
       end
 
       prs.each do |pr|
