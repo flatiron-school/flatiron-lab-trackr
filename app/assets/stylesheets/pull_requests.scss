@@ -4,6 +4,14 @@
 
 .show-pr {
   display: inline;
-  margin-left: 5%;
+  margin-bottom: 5px;
+  // margin-left: 20%;
 }
 
+.student-name-header {
+  width: 30%;
+}
+
+#pull_request_list {
+  list-style: none;
+}

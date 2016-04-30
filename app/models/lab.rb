@@ -14,8 +14,13 @@ class Lab < ApplicationRecord
   end
 
   def files
-    filenames = self.pull_requests.map {|pr| pr.pull_request_files}.flatten.pluck(:name).map!(&:downcase).delete_if {|f| f.start_with?("db/")}
+    filenames = self.pull_requests.map {|pr| pr.pull_request_files}.flatten.pluck(:name).map!(&:downcase).delete_if {|f| f.start_with?("db/") || !f.scan(/_spec/).empty?}
     filenames.map {|filename| filename.split("/").last}.uniq
+  end
+
+  def directories
+    filenames = self.pull_requests.map {|pr| pr.pull_request_files}.flatten.pluck(:name).map!(&:downcase).delete_if {|f| f.start_with?("spec/")}
+    filenames.map {|file| file.split("/")[0..-2].join("/")}.uniq
   end
 
 end
