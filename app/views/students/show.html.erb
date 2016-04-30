@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h1><%= @student.full_name %> // <small><%=link_to @student.github_username, "http://github.com/#{@student.github_username}"%></small></h1>
+</div>
+
+<div class="row">
+  <ul id="pull_request_list">
+    <%@student.pull_requests.sort_by {|pr| pr.lab.deploy_date}.each do |pr|%>
+      <li><h3><%=pr.lab.name%></li></h3>
+      <%= render partial: 'pull_requests/pull_request', locals: {student: @student, pull_request: pr}%>
+    <%end%>
+  </ul>
+
+</div>

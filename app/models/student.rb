@@ -3,8 +3,14 @@ class Student < ApplicationRecord
   has_many :pull_requests
   has_many :labs, through: :pull_requests
 
+  before_create :slugify
+
   def to_param
-    self.full_name.downcase.gsub(" ", "-")
+    self.slug
+  end
+
+  def slugify
+    self.slug = self.full_name.strip.downcase.gsub(" ", "-")
   end
 
   def self.find_or_create_from_row(params)

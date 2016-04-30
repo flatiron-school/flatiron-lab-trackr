@@ -1,0 +1,9 @@
+<%if lab.pull_requests?%>
+  <%lab.pull_requests.each do |pull_request|%>
+      <li>
+        <h3><%= link_to pull_request.student.full_name, student_path(pull_request.student) %></h3>
+      </li>
+      <%= render partial: "pull_requests/pull_request", locals: {pull_request: pull_request} %>
+
+  <%end%>
+<%end%>

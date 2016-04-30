@@ -1,9 +1,17 @@
 
 # TODO:
 
-* create lab with name and URL; persist and associate to a cohort
-  * need authorization? way to ensure adding to correct cohort--drop down menu?
-* On lab showpage, "get PRs" button
-* Construct view of lab prs per student, per lab (in each case, group labs by deploy date. it will be rough but better than nothing)***ADD DEPLOY DATE TO LABS TABLE. deploy date will populate when lab is created, we will need to request that info from GH using octokit/github api. 
 
-then--webhooks to get most up-to-date PR code all the time 
+
+* loading graphic after "get PRs" button is clicked
+* style show/hide of pr files
+* on lab show: view by directory or specific file
+* form for new lab should be on cohort show page
+* nav bar links: what do we need?
+
+
+
+then:
+  * webhooks to get most up-to-date PR code all the time 
+  * sidekiq to make getting prs for a lab into a background task
+  * search by student, lab for cohort (chris)

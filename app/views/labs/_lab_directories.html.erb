@@ -1,0 +1,17 @@
+<div class="panel">
+  <div class="panel-heading">
+    <h1 class="panel-title">Select Directories to view  
+      <button class="btn btn-info rotate-reset" data-id="lab-directories-down" id="select-lab-content-btn"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+    </h1>
+  </div>
+  <div data-id="lab-directories">
+    <ul class="lab-select-list">
+    <%lab.directories.each do |d|%>
+      <li><input class="file-checkbox" type="checkbox" data-id="selected-directories" value="<%=d%>"> <%=d%></li>
+    <%end%>
+    </ul>
+    <div class="lab-select-submit-btn" data-id="lab-directories-submit">
+      <button class="btn btn-info">submit</button>
+    </div>
+  </div>
+</div>

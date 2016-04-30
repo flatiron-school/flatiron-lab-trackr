@@ -1,3 +1,17 @@
 // Place all the styles related to the pull_requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show-pr {
+  display: inline;
+  margin-bottom: 5px;
+  // margin-left: 20%;
+}
+
+.student-name-header {
+  width: 30%;
+}
+
+#pull_request_list {
+  list-style: none;
+}
