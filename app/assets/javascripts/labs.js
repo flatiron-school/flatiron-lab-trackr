@@ -3,9 +3,10 @@ $(document).ready(function() {
   $("[data-id='lab-directories']").hide();
   $("[data-class='pr-file'").hide();
   addFileSelectListener();
-  addPRFileListener();
   addDirectorySelectListener();
   showAllListener();
+  PRFileListener();
+  directoryListener();
 
 })
 
@@ -19,7 +20,7 @@ function addFileSelectListener(){
   })
 }
 
-function addPRFileListener(){
+function PRFileListener(){
   $("[data-id='lab-files-submit']").on("click", function(e){
     e.preventDefault;
     e.stopPropagation;
@@ -35,7 +36,7 @@ function addPRFileListener(){
   })
 }
 
-function addPRFileListener(){
+function directoryListener(){
   $("[data-id='lab-directories-submit']").on("click", function(e){
     e.preventDefault;
     e.stopPropagation;
