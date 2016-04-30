@@ -4,8 +4,6 @@
 
 
 * loading graphic after "get PRs" button is clicked
-* style show/hide of pr files
-* on lab show: view by directory or specific file
 * form for new lab should be on cohort show page
 * nav bar links: what do we need?
 
