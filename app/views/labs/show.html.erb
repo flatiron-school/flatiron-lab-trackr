@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1 id="lab-header"><%= @lab.name %><%= button_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", class: "btn btn-default"%> <button class="btn btn-info" id="show-all-prs">show all</button></h1>
+  <h1 id="lab-header"><%= @lab.name %><%= link_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", remote: true, class: "btn btn-default", id: "get-prs-btn"%> <button class="btn btn-info" id="show-all-prs">show all</button></h1>
 </div>
 
 
@@ -12,11 +12,6 @@
 </div>
 
 <ul id="pull_request_list">
-  <%@lab.pull_requests.each do |pull_request|%>
-    <li>
-      <h3><%= link_to pull_request.student.full_name, student_path(pull_request.student) %></h3>
-    </li>
-    <%= render partial: "pull_requests/pull_request", locals: {pull_request: pull_request} %>
-
-  <%end%>
+  <%= render partial: "labs/pull_requests_list", locals: {lab: @lab}%>
 </ul>
+

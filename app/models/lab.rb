@@ -23,4 +23,8 @@ class Lab < ApplicationRecord
     filenames.map {|file| file.split("/")[0..-2].join("/")}.uniq
   end
 
+  def pull_requests?
+    !self.pull_requests.empty?
+  end
+
 end
