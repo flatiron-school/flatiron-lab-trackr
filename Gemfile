@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'octokit'
 gem 'paperclip'
 gem 'figaro'
+gem 'spinjs-rails'
 
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
