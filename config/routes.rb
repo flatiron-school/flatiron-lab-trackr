@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   resources :pull_request_files
   resources :pull_requests
   resources :students, param: :slug
-
   resources :cohorts, param: :slug do
     resources :labs, param: :slug
   end
+
+  get '/search/:query', to: 'searches#new'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Serve websocket cable requests in-process
