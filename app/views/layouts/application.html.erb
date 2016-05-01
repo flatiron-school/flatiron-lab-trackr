@@ -26,8 +26,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <%= form_tag '/search/:query', method: 'GET', class: 'navbar-form navbar-left', role: 'search' do %>
-                <%= text_field_tag 'Search', '', class: 'form-control' %>
+              <%= form_tag '/search', method: 'GET', class: 'navbar-form navbar-left', role: 'search' do %>
+                <%= text_field_tag :query, '', class: 'form-control' %>
                 <%= submit_tag 'Search', class: 'btn btn-default' %>
               <% end %>
             </li>

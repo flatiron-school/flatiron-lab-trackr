@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :labs, param: :slug
   end
 
-  get '/search/:query', to: 'searches#new'
+  get '/search', to: 'searches#new'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
