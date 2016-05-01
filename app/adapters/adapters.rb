@@ -1,7 +1,7 @@
 module Adapters
   class GitHubWrapper
 
-    attr_accessor :client, :repo_name
+    attr_accessor :client, :current_time, :repo_name
 
     def initialize
       configure_client
@@ -24,7 +24,7 @@ module Adapters
       prs.each do |pr|
         client.pull_files("learn-co-students/#{repo_name}", pr.pr_number).each do |pr_file|
           if pr_file.filename.split(".").last == "rb" || pr_file.filename.split(".").last == "js"
-            encoded_content = client.get(pr_file.contents_url).content 
+            encoded_content = client.get(pr_file.contents_url, since: current_time).content 
             content = Base64.decode64(encoded_content).encode('UTF-8')
             pull_request = PullRequestFile.find_or_create_by(pull_request: pr, name: pr_file.filename.downcase)
             pr.save
@@ -38,7 +38,8 @@ module Adapters
     private
 
       def configure_client
-        @client ||= Octokit::Client.new(cilent_id: 'd35ba1e680e89bbc4ce5', client_secret: 'ae81ab3a8a025be085e1dabae69ecd17444d7769')
+        binding.pry
+        @client = Octokit::Client.new(login: ENV["GITHUB_USERNAME"], password: ENV["GITHUB_PASSWORD"])
         # @client ||= Octokit::Client.new(:access_token => ENV['OCTO_TOKEN'])
       end
   end
