@@ -38,7 +38,6 @@ module Adapters
     private
 
       def configure_client
-        binding.pry
         @client = Octokit::Client.new(login: ENV["GITHUB_USERNAME"], password: ENV["GITHUB_PASSWORD"])
         # @client ||= Octokit::Client.new(:access_token => ENV['OCTO_TOKEN'])
       end
