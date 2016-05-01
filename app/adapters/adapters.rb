@@ -38,7 +38,7 @@ module Adapters
     private
 
       def configure_client
-        @client ||= Octokit::Client.new(cilent_id: d35ba1e680e89bbc4ce5, client_secret: ae81ab3a8a025be085e1dabae69ecd17444d7769)
+        @client ||= Octokit::Client.new(cilent_id: 'd35ba1e680e89bbc4ce5', client_secret: 'ae81ab3a8a025be085e1dabae69ecd17444d7769')
         # @client ||= Octokit::Client.new(:access_token => ENV['OCTO_TOKEN'])
       end
   end
