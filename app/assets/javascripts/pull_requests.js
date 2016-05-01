@@ -1,5 +1,6 @@
 $(document).ready(function() {
   addShowPRListener();
+  addPRLoadingSpinner();
 })
 
 function addShowPRListener(){
@@ -10,5 +11,14 @@ function addShowPRListener(){
     var studentPRFiles = btn.getAttribute('data-id');
     $("." + studentPRFiles).slideToggle('slow');
     $("." + studentPRFiles).removeClass("hidden");
+  })
+}
+
+function addPRLoadingSpinner(){
+  $("#get-prs-btn").on("click", function(e){
+    // e.preventDefault;
+    e.stopPropagation;
+    $("#pull_request_list").spin();
+    
   })
 }
