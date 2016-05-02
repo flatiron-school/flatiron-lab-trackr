@@ -7,9 +7,9 @@ RSpec.describe Adapters, :type => :model do
   end
   describe "::GitHubWrapper#get_pull_requests" do 
     it "fetches all open PRs of a given lab" do 
-      VCR.use_cassette('pull_requests') do
+      VCR.use_cassette('fixtures/pull_requests') do
         Adapters::GitHubWrapper.new.get_lab_prs(@lab.id)
-        expect(@lab.pull_requests.count).to eq(27)
+        expect(@lab.pull_requests.count).to eq(29)
       end
     end
   end

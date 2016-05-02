@@ -5,3 +5,4 @@ VCR.configure do |c|
   # your HTTP request service. 
   c.hook_into :webmock
 end  
+raise :hell

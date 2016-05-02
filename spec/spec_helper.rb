@@ -1,7 +1,24 @@
 require 'capybara/rspec'
 require 'rails_helper'
 
-# require 'webmock/rspec'  
+require 'webmock/rspec'  
+
+VCR.configure do |c|  
+  #the directory where your cassettes will be saved
+  c.cassette_library_dir = 'spec/vcr/fixtures'
+   c.debug_logger = File.open('spec/vcr/fixtures/debug_log', 'w')
+   c.ignore_localhost = true
+  #  c.ignore_request do |request|
+  #   # binding.pry
+  #   request.uri.split("/").last == "__identify__"
+  #   # request.method == :delete || (request.method == :get && request.uri.split("/").last == "__identify__") || (request.method == :post)
+  #   # binding.pry
+  #   # request == 
+  # end
+  # c.allow_http_connections_when_no_cassette = false  
+  # your HTTP request service. 
+  c.hook_into :webmock
+end 
 # WebMock.disable_net_connect!(allow_localhost: true)  
 
 RSpec.configure do |config|
@@ -15,22 +32,22 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
-    # test_seed
   end
 
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:each, :js => true) do
+  config.before(:each, type: :feature) do
     DatabaseCleaner.strategy = :truncation
+
   end
 
   config.before(:each) do
     DatabaseCleaner.start
   end
 
-  config.after(:each) do
+  config.append_after(:each) do
     DatabaseCleaner.clean
   end
 

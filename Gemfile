@@ -32,9 +32,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'vcr'
-  # gem 'webmock'  
 end
 
+gem 'webmock', group: :test 
 group :development do
   gem 'web-console', '~> 3.0'
   gem 'listen', '~> 3.0.5'
