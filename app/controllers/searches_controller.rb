@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
 
   def new
+    @search_type = params[:type]
     unless params[:query].empty? || params[:query] == " "
       if params[:type] == 'students'
         @students = Student.where('first_name ILIKE ? OR last_name ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")

@@ -1,13 +1,17 @@
-<h1>Search Results</h1>
+<h1>Search Results (<%= @search_type %>)</h1>
 <% if @students && !@students.empty? %>
+  <ul>
   <% @students.each do |student| %>
-    <%= link_to student.full_name, student_path(student) %>
+    <li><%= link_to student.full_name, student_path(student) %></li>
   <% end %>
+  </ul>
 <% elsif @labs && !@labs.empty? %>
+  <ul>
   <% @labs.each do |lab| %>
-    <%= link_to lab.name, [lab.cohort, lab] %>
+    <li><%= link_to lab.name, [lab.cohort, lab] %></li>
   <% end %>
+  </ul>
 <% else %>
-  <p>No results matching your query. Please try a different search term.</p>
+  <p>No <%= @search_type %> matching your query. Please revise your search term.</p>
 <% end %>
 
