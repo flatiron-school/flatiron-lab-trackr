@@ -2,7 +2,7 @@ class PullRequestsController < ApplicationController
 
   def create
     @lab = Lab.find_by(slug: params[:lab])
-    @pull_requests = Adapters::GitHubWrapper.new.get_lab_prs(@lab)
+    @pull_requests = Adapters::GitHubWrapper.new.get_lab_prs(@lab.id)
     
     respond_to do |format|
       format.js
