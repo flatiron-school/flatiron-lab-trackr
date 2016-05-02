@@ -17,7 +17,7 @@ class LabsController < ApplicationController
     lab = Lab.new(lab_params)
     lab.cohort = @cohort
     if lab.save
-      lab.update(deploy_date: Adapters::GitHubWrapper.new.get_repo_create_date(lab))
+      lab.update(deploy_date: (Adapters::GitHubWrapper.new.get_repo_create_date(lab) || Date.today))
       redirect_to cohort_lab_path(@cohort, lab)
     else
       redirect_to new_cohort_lab_path(@cohort)
