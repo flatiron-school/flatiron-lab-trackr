@@ -1,0 +1,10 @@
+<% if flash[:notice]%>
+
+  <div class="alert alert-danger" role="alert" style="margin-top: 2%">
+    <% flash[:notice].each do |type, messages| %>
+      <%messages.each do |m|%>
+         <%=type%> <%=m%>
+      <%end%>
+    <%end%>
+  </div>
+<%end%>
