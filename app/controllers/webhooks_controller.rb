@@ -6,6 +6,8 @@ class WebhooksController < ApplicationController
     if params[:zen]
       head :no_content
       return
+    else
+      WebHooksPullRequestUpdater.new.perform(params[:pull_request])
     end
   end
 end
