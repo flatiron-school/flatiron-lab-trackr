@@ -1,6 +1,7 @@
 class CohortsController < ApplicationController
 
   def index
+    binding.pry
     @cohorts = Cohort.all
   end
 

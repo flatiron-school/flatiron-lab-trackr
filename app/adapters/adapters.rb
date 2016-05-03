@@ -35,7 +35,7 @@ module Adapters
     private
 
       def configure_client
-        @client = Octokit::Client.new(login: ENV["GITHUB_USERNAME"], password: ENV["GITHUB_PASSWORD"])
+        @client ||= Octokit::Client.new(login: ENV["GITHUB_USERNAME"], password: ENV["GITHUB_PASSWORD"])
       end
 
       def set_lab(lab_id)
