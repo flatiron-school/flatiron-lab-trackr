@@ -22,11 +22,14 @@ module Adapters
     end
 
     def create_or_update_from_webhook(pr)
-      @lab = Lab.find_by(repo: pr[:head][:repo][:html_url])
+      search = pr["head"]["repo"]["html_url"].split("/").last
+      @lab = Lab.where("repo LIKE ?", "%#{search}%").first
       if @lab
         student = find_pr_student(pr)
         repo_name = lab.repo.split("/").last
-        pull_request = build_pr(pr)
+        pull_request = build_pr(student, pr)
+        lab.pull_requests << pull_request
+        lab.save
         build_pr_files(pull_request, repo_name)
       end
     end

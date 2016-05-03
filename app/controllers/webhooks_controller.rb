@@ -7,8 +7,8 @@ class WebhooksController < ApplicationController
       head :no_content
       return
     else
-      binding.pry
       WebHooksPullRequestUpdater.new.perform(params[:pull_request])
     end
   end
 end
+
