@@ -1,4 +1,4 @@
-class WebHooksPullRequestUpdater < ApplicationJob
+class WebHooksPullRequestUpdaterJob < ApplicationJob
   queue_as :default
 
   def perform(pr)

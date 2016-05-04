@@ -18,7 +18,7 @@ RSpec.describe Adapters, :type => :model do
   end
 
   describe "::GitHubWrapper#create_or_update_from_webhook" do 
-    it "receives a payload of a new PR from github and creates or updates the appropriate PR and PR files" do
+    it "given a payload of a new PR from github, it creates or updates the appropriate PR and PR files" do
       VCR.use_cassette('pull_request_files_from_payload') do
         payload = File.open(Rails.root.join("spec", "fixtures", "payload_pull_request.json"))
         params_hash = JSON.parse(File.read(payload).gsub("=>", ":").gsub("nil", "null"))

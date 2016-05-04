@@ -13,6 +13,14 @@ module Adapters
       repo_data.created_at
     end
 
+    def create_lab_webhook(lab)
+      repo_name = lab.repo.split("/").last
+      client.create_hook(repo_name, 
+        'web', 
+        {url: "#{ENV["DOMAIN"]}/webhooks/pull-requests", content_type: 'json'},
+        { events: ['pull_request'], active: true})
+    end
+
     def get_lab_prs(lab_id)
       set_lab(lab_id)
       repo_name = lab.repo.split("/").last
