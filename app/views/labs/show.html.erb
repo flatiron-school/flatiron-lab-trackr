@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1 id="lab-header"><%= @lab.name %><%= link_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", remote: true, class: "btn btn-default", id: "get-prs-btn"%> <button class="btn btn-info" id="show-all-prs">show all</button></h1>
+  <h1 id="lab-header"><%= link_to @lab.name, @lab.repo %><%= link_to "get pull requests", pull_requests_path({lab: @lab}), method: "post", remote: true, class: "btn btn-default", id: "get-prs-btn"%> <button class="btn btn-info" id="show-all-prs">show all</button></h1>
 </div>
 
 

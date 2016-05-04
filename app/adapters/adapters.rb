@@ -85,7 +85,7 @@ module Adapters
       end
 
       def build_pr(student, pr)
-        PullRequest.find_or_create_by(student: student, pr_number: pr.url.split("/").last, url: pr.url)
+        PullRequest.find_or_create_by(student: student, pr_number: pr.url.split("/").last, url: pr.html_url)
       end
 
       def get_and_decode_content(pr_file)
