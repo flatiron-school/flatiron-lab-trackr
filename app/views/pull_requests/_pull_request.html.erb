@@ -1,5 +1,5 @@
   <button data-id="student-<%= pull_request.student.id %>" class="btn btn-info show-pr">show PR</button>
-  <%=link_to "view on GitHub", pull_request.url, class: "btn btn-success"%>
+  <%=link_to "view on GitHub", pull_request.url, target: "blank", class: "btn btn-success"%>
   <ul>
     <%= render partial: "pull_request_files/pull_request_file", collection: pull_request.pull_request_files %>
   </ul>
