@@ -26,5 +26,4 @@ class Lab < ApplicationRecord
   def pull_requests?
     !self.pull_requests.empty?
   end
-
 end

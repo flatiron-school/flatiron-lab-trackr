@@ -2,7 +2,7 @@ class PullRequestsController < ApplicationController
 
   def create
     @lab = Lab.find_by(slug: params[:lab])
-    @pull_requests = PullRequestFetcherJob.new.perform(@lab.id)
+    @pull_requests = PullRequestFetcherJob.perform_now(@lab.id)
     
     respond_to do |format|
       format.js

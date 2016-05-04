@@ -2,23 +2,19 @@ require 'capybara/rspec'
 require 'rails_helper'
 
 require 'webmock/rspec'  
-
+require_relative "./support/deep_struct.rb"
+# require_relative "./support/vcr_setup.rb"
 VCR.configure do |c|  
   #the directory where your cassettes will be saved
   c.cassette_library_dir = 'spec/vcr/fixtures'
-   c.debug_logger = File.open('spec/vcr/fixtures/debug_log', 'w')
-   c.ignore_localhost = true
-  #  c.ignore_request do |request|
-  #   # binding.pry
-  #   request.uri.split("/").last == "__identify__"
-  #   # request.method == :delete || (request.method == :get && request.uri.split("/").last == "__identify__") || (request.method == :post)
-  #   # binding.pry
-  #   # request == 
-  # end
-  # c.allow_http_connections_when_no_cassette = false  
-  # your HTTP request service. 
+  # c.debug_logger = File.open('spec/vcr/fixtures/debug_log', 'w')
+  # c.ignore_localhost = true
+  c.ignore_hosts '127.0.0.1', 'localhost'
+  c.filter_sensitive_data('<GITHUB_USERNAME>') { ENV['GITHUB_USERNAME'] }  
+  c.filter_sensitive_data('<GITHUB_PASSWORD>') { ENV['GITHUB_PASSWORD'] }  
   c.hook_into :webmock
 end 
+
 # WebMock.disable_net_connect!(allow_localhost: true)  
 
 RSpec.configure do |config|
@@ -89,13 +85,15 @@ end
 
 
 def test_seed
-  @cohort = Cohort.create(name: "web-0416")
-  @lab = Lab.create(name: "Strong Params Basics", 
+  cohort = Cohort.create(name: "web-0416")
+  lab = Lab.create(name: "Strong Params Basics", 
     repo: "https://github.com/learn-co-students/strong-params-basics-web-0416", 
     deploy_date: Date.today, 
-    cohort: @cohort)
-  @cohort.roster_csv_file_name = "students.csv"
-  @cohort.create_members
+    cohort: cohort)
+  cohort.roster_csv_file_name = "students.csv"
+  cohort.create_members
+  cohort.students << Student.create(first_name: "Sophie", last_name: "DeBenedetto", github_username: "SophieDeBenedetto")
+  cohort.save
 end
 
 
