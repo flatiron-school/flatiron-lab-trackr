@@ -1,27 +1,16 @@
-[Cassette: 'pull_requests'] Initialized with options: {:record=>:once, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system}
-[webmock] Handling request: [get http://127.0.0.1:56100/__identify__] (disabled: false)
-[webmock] Identified request type (ignored) for [get http://127.0.0.1:56100/__identify__]
-[webmock] Handling request: [get http://127.0.0.1:56100/__identify__] (disabled: false)
-[webmock] Identified request type (ignored) for [get http://127.0.0.1:56100/__identify__]
-[webmock] Handling request: [get http://127.0.0.1:56100/__identify__] (disabled: false)
-[webmock] Identified request type (ignored) for [get http://127.0.0.1:56100/__identify__]
-[webmock] Handling request: [post http://127.0.0.1:7056/hub/session] (disabled: false)
-[webmock] Identified request type (ignored) for [post http://127.0.0.1:7056/hub/session]
-[webmock] Handling request: [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/url] (disabled: false)
-[webmock] Identified request type (ignored) for [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/url]
-[webmock] Handling request: [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/elements] (disabled: false)
-[webmock] Identified request type (ignored) for [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/elements]
-[webmock] Handling request: [get http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/element/%7B9b70a71b-d87b-9b4a-8aba-d4573a29e32e%7D/displayed] (disabled: false)
-[webmock] Identified request type (ignored) for [get http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/element/%7B9b70a71b-d87b-9b4a-8aba-d4573a29e32e%7D/displayed]
-[webmock] Handling request: [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/element/%7B9b70a71b-d87b-9b4a-8aba-d4573a29e32e%7D/click] (disabled: false)
-[webmock] Identified request type (ignored) for [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/element/%7B9b70a71b-d87b-9b4a-8aba-d4573a29e32e%7D/click]
-[webmock] Handling request: [delete http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/cookie] (disabled: false)
-[webmock] Identified request type (ignored) for [delete http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/cookie]
-[webmock] Handling request: [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/url] (disabled: false)
-[webmock] Identified request type (ignored) for [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/url]
-[webmock] Handling request: [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/elements] (disabled: false)
-[webmock] Identified request type (ignored) for [post http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b/elements]
-[webmock] Handling request: [get https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/pulls] (disabled: false)
-[webmock] Identified request type (unhandled) for [get https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/pulls]
-[webmock] Handling request: [delete http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b] (disabled: false)
-[webmock] Identified request type (ignored) for [delete http://127.0.0.1:7056/hub/session/3a5eb32d-31a5-db4e-bb91-785162593b7b]
+[Cassette: 'create_webhook'] Initialized with options: {:record=>:once, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system}
+[webmock] Handling request: [post https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/hooks] (disabled: false)
+  [Cassette: 'create_webhook'] Initialized HTTPInteractionList with request matchers [:method, :uri] and 0 interaction(s): {  }
+[webmock] Identified request type (recordable) for [post https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/hooks]
+[Cassette: 'create_webhook'] Recorded HTTP interaction [post https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/hooks] => [201 "{\"type\":\"Repository\",\"id\":8285992,\"name\":\"web\",\"active\":true,\"events\":[\"pull_req"]
+[webmock] Handling request: [get https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/hooks] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/hooks]
+[Cassette: 'create_webhook'] Recorded HTTP interaction [get https://SophieDeBenedetto:Fvk6dgiv@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/hooks] => [200 "[{\"type\":\"Repository\",\"id\":8285992,\"name\":\"web\",\"active\":true,\"events\":[\"pull_re"]
+[VCR::Configuration] before_record: replacing "SophieDeBenedetto" with "<GITHUB_USERNAME>"
+[VCR::Configuration] before_record: replacing "Fvk6dgiv" with "<GITHUB_PASSWORD>"
+[VCR::Configuration] before_record: replacing "SophieDeBenedetto" with "<GITHUB_USERNAME>"
+[VCR::Configuration] before_record: replacing "Fvk6dgiv" with "<GITHUB_PASSWORD>"
+[VCR::Configuration] before_record: replacing "SophieDeBenedetto" with "<GITHUB_USERNAME>"
+[VCR::Configuration] before_record: replacing "Fvk6dgiv" with "<GITHUB_PASSWORD>"
+[VCR::Configuration] before_record: replacing "SophieDeBenedetto" with "<GITHUB_USERNAME>"
+[VCR::Configuration] before_record: replacing "Fvk6dgiv" with "<GITHUB_PASSWORD>"

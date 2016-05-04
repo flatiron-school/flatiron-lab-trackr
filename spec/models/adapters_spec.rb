@@ -29,4 +29,20 @@ RSpec.describe Adapters, :type => :model do
       end
     end
   end
+
+  describe "::GitHubWrapper#create_lab_webhook" do 
+    it "adds a webhook to a given lab's repo" do
+      VCR.use_cassette('create_webhook') do
+        lab = Lab.first
+        Adapters::GitHubWrapper.new.create_lab_webhook(lab)
+        client = Octokit::Client.new(login: ENV["GITHUB_USERNAME"], password: ENV["GITHUB_PASSWORD"])
+        hooks = client.hooks("learn-co-students/#{lab.repo.split("/").last}")
+
+        expect(hooks.length).to eq(1)
+        expect(hooks.first.config.url).to eq("https://flatiron-lab-trackr.herokuapp.com/webhooks/pull-requests")
+        expect(hooks.first.config.url).to eq("https://flatiron-lab-trackr.herokuapp.com/webhooks/pull-requests")
+        expect(hooks.first.events).to include("pull_request")
+      end
+    end
+  end
 end

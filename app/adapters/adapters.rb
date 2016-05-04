@@ -15,7 +15,7 @@ module Adapters
 
     def create_lab_webhook(lab)
       repo_name = lab.repo.split("/").last
-      client.create_hook(repo_name, 
+      client.create_hook("learn-co-students/#{repo_name}", 
         'web', 
         {url: "#{ENV["LAB_TRACKR_APP_URL"]}/webhooks/pull-requests", content_type: 'json'},
         { events: ['pull_request'], active: true})
