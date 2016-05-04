@@ -17,7 +17,7 @@ module Adapters
       repo_name = lab.repo.split("/").last
       client.create_hook(repo_name, 
         'web', 
-        {url: "#{ENV["DOMAIN"]}/webhooks/pull-requests", content_type: 'json'},
+        {url: "#{ENV["LAB_TRACKR_APP_URL"]}/webhooks/pull-requests", content_type: 'json'},
         { events: ['pull_request'], active: true})
     end
 
