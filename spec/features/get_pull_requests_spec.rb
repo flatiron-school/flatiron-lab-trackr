@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "GetPullRequests", :type => :feature do
   describe "GET /get_pull_requests", js: true do
-    it "retreives student pull requests for a lab when 'get prs button' is clicked on lab show page" do
+    xit "retreives student pull requests for a lab when 'get prs button' is clicked on lab show page" do
       VCR.use_cassette('retreive_pull_requests_feature_test') do
         test_seed
         cohort = Cohort.first

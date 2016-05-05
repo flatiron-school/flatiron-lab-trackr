@@ -5,25 +5,16 @@ require 'webmock/rspec'
 require_relative "./support/deep_struct.rb"
 # require_relative "./support/vcr_setup.rb"
 VCR.configure do |c|  
-  #the directory where your cassettes will be saved
   c.cassette_library_dir = 'spec/vcr/fixtures'
-  # c.debug_logger = File.open('spec/vcr/fixtures/debug_log', 'w')
-  # c.ignore_localhost = true
-  c.ignore_hosts '127.0.0.1', 'localhost'
   c.filter_sensitive_data('<GITHUB_USERNAME>') { ENV['GITHUB_USERNAME'] }  
   c.filter_sensitive_data('<GITHUB_PASSWORD>') { ENV['GITHUB_PASSWORD'] }  
   c.hook_into :webmock
 end 
 
-# WebMock.disable_net_connect!(allow_localhost: true)  
 
 RSpec.configure do |config|
-  # rspec-expectations config goes here. You can use an alternate
-  # assertion/expectation library such as wrong or the stdlib/minitest
   config.include Capybara::DSL
-  # config.before(:each, js: true) do 
-  #   DatabaseCleaner.strategy = :truncation 
-  # end
+ 
 
   config.use_transactional_fixtures = false
   config.before(:suite) do
@@ -47,19 +38,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  # config.before :each do
-  #   if Capybara.current_driver == :rack_test
-  #     DatabaseCleaner.strategy = :transaction
-  #   else
-  #     DatabaseCleaner.strategy = :truncation
-  #   end
-  #   DatabaseCleaner.start
-  # end
-
-  # config.after do
-  #   DatabaseCleaner.clean
-  # end
-  # assertions if you prefer.
+  
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods

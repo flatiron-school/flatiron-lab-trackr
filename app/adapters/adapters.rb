@@ -29,17 +29,17 @@ module Adapters
       get_pr_files(pull_requests, repo_name)
     end
 
-    def create_or_update_from_webhook(pr)
+    def create_or_update_pr_from_webhook(pr)
       search = pr["head"]["repo"]["html_url"].split("/").last
-      @lab = Lab.where("repo LIKE ?", "%#{search}%").first
-      if @lab
+      lab = Lab.where("repo LIKE ?", "%#{search}%").first
+      if lab
         student = find_pr_student(pr)
-        repo_name = lab.repo.split("/").last
-        pull_request = build_pr(student, pr)
-        lab.pull_requests << pull_request
-        lab.save
-        build_pr_files(pull_request, repo_name)
+        build_pr(student, pr, lab)
       end
+    end
+
+    def update_pr_files_from_webhook(pr)
+      build_pr_files(pr, pr.lab.repo_name)
     end
 
 
@@ -84,8 +84,8 @@ module Adapters
         pull_request_file.update(content: content)
       end
 
-      def build_pr(student, pr)
-        PullRequest.find_or_create_by(student: student, pr_number: pr.url.split("/").last, url: pr.html_url)
+      def build_pr(student, pr, lab=nil)
+        PullRequest.find_or_create_by(student: student, pr_number: pr.url.split("/").last, url: pr.html_url, lab: lab)
       end
 
       def get_and_decode_content(pr_file)

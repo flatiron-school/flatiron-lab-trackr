@@ -26,4 +26,8 @@ class Lab < ApplicationRecord
   def pull_requests?
     !self.pull_requests.empty?
   end
+
+  def repo_name
+    lab.repo.split("/").last
+  end
 end

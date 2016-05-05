@@ -23,7 +23,7 @@ RSpec.describe Adapters, :type => :model do
         payload = File.open(Rails.root.join("spec", "fixtures", "payload_pull_request.json"))
         params_hash = JSON.parse(File.read(payload).gsub("=>", ":").gsub("nil", "null"))
         params = DeepStruct.new(params_hash)
-        Adapters::GitHubWrapper.new.create_or_update_from_webhook(params["pull_request"])
+        Adapters::GitHubWrapper.new.create_or_update_pr_from_webhook(params["pull_request"])
         lab = Lab.first
         expect(lab.pull_requests.count).to eq(1)
       end
