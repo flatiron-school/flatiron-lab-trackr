@@ -7,7 +7,7 @@ class WebhooksController < ApplicationController
       head :no_content
       return
     else
-      WebHooksPullRequestUpdater.perform_later(params[:pull_request])
+      WebHooksPullRequestUpdaterJob.perform_later(params[:pull_request])
     end
   end
 end
