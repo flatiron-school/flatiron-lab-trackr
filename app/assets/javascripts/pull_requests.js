@@ -8,9 +8,9 @@ function addShowPRListener(){
     e.preventDefault;
     e.stopPropagation;
     var btn = e.toElement;
-    var studentPRFiles = btn.getAttribute('data-id');
-    $("." + studentPRFiles).slideToggle('slow');
-    $("." + studentPRFiles).removeClass("hidden");
+    var prFilesId = btn.getAttribute('data-pr')
+    $("[data-pr-parent='" + prFilesId +  "']").slideToggle('slow');
+    $("[data-pr-parent='" + prFilesId +  "']").removeClass("hidden");
   })
 }
 
