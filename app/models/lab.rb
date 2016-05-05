@@ -28,6 +28,6 @@ class Lab < ApplicationRecord
   end
 
   def repo_name
-    lab.repo.split("/").last
+    self.repo.split("/").last
   end
 end
