@@ -85,7 +85,7 @@ module Adapters
       end
 
       def build_pr(student, pr, lab=nil)
-        PullRequest.find_or_create_by(student: student, pr_number: pr.url.split("/").last, url: pr.html_url, lab: lab)
+        PullRequest.find_or_create_by(student: student, pr_number: pr[:url]split("/").last, url: pr[:html_url], lab: lab)
       end
 
       def get_and_decode_content(pr_file)
@@ -94,7 +94,7 @@ module Adapters
       end
 
       def find_pr_student(pr)
-        Student.find_by(github_username: pr.user.login)
+        Student.find_by(github_username: pr[:user][:login])
       end
   end
 end
