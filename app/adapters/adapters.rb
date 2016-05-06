@@ -71,7 +71,7 @@ module Adapters
 
       def build_pr_files(pr, repo_name)
         client.pull_files("learn-co-students/#{repo_name}", pr.pr_number).each do |pr_file|
-          if pr_file.filename.split(".").last == "rb" || pr_file.filename.split(".").last == "js"
+          if pr_file.filename.split(".").last == "rb" || pr_file.filename.split(".").last == "js" || pr_file.filename.split(".").last == "erb"
             content = get_and_decode_content(pr_file)
             build_pr_file(pr, pr_file, content)
           end

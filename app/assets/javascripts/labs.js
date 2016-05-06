@@ -10,15 +10,6 @@ $(document).ready(function() {
 
 })
 
-function addFileSelectListener(){
-  $("[data-id='lab-files-down']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    $("[data-id='lab-files-down']").toggleClass('rotate');
-    $("[data-id='lab-files-down']").toggleClass('rotate-reset');
-    $("[data-id='lab-files']").slideToggle("slow")
-  })
-}
 
 function PRFileListener(){
   $("[data-id='lab-files-submit']").on("click", function(e){
@@ -52,6 +43,15 @@ function directoryListener(){
   })
 }
 
+function addFileSelectListener(){
+  $("[data-id='lab-files-down']").on("click", function(e){
+    e.preventDefault;
+    e.stopPropagation;
+    $("[data-id='lab-files-down']").toggleClass('rotate');
+    $("[data-id='lab-files-down']").toggleClass('rotate-reset');
+    $("[data-id='lab-files']").slideToggle("slow")
+  })
+}
 
 function addDirectorySelectListener(){
   $("[data-id='lab-directories-down']").on("click", function(e){
