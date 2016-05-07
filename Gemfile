@@ -32,6 +32,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'vcr'
+  gem 'puffing-billy'
+  gem 'rspec-retry'
+  gem 'capybara-webkit'
+  # gem 'poltergeist'
 end
 
 gem 'webmock', group: :test 

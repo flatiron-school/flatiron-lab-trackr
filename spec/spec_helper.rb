@@ -1,16 +1,13 @@
 require 'capybara/rspec'
 require 'rails_helper'
-
 require 'webmock/rspec'  
+require 'rspec/retry'
+
 require_relative "./support/deep_struct.rb"
-# require_relative "./support/vcr_setup.rb"
-VCR.configure do |c|  
-  c.cassette_library_dir = 'spec/vcr/fixtures'
-  c.ignore_localhost = true
-  c.filter_sensitive_data('<GITHUB_USERNAME>') { ENV['GITHUB_USERNAME'] }  
-  c.filter_sensitive_data('<GITHUB_PASSWORD>') { ENV['GITHUB_PASSWORD'] }  
-  c.hook_into :webmock
-end 
+require_relative "./support/vcr_setup.rb"
+require_relative "./support/capybara_setup.rb"
+require_relative "./support/billy_setup.rb"
+
 
 
 RSpec.configure do |config|
@@ -39,24 +36,29 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  
+
+  config.verbose_retry = true
+  # show exception that triggers a retry if verbose_retry is set to true
+  config.display_try_failure_messages = true
+
+  # run retry only on features
+  config.around :each, :js do |ex|
+    ex.run_with_retry retry: 10
+  end
+
+  config.around(:each, type: :feature) do |example|
+    WebMock.allow_net_connect!
+    example.run
+    WebMock.disable_net_connect!(allow_localhost: true)
+  end
+
   config.expect_with :rspec do |expectations|
-    # This option will default to `true` in RSpec 4. It makes the `description`
-    # and `failure_message` of custom matchers include text for helper methods
-    # defined using `chain`, e.g.:
-    # be_bigger_than(2).and_smaller_than(4).description
-    #   # => "be bigger than 2 and smaller than 4"
-    # ...rather than:
-    #   # => "be bigger than 2"
+   
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
-  # rspec-mocks config goes here. You can use an alternate test double
-  # library (such as bogus or mocha) by changing the `mock_with` option here.
+  
   config.mock_with :rspec do |mocks|
-    # Prevents you from mocking or stubbing a method that does not exist on
-    # a real object. This is generally recommended, and will default to
-    # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
 end

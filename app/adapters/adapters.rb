@@ -64,16 +64,17 @@ module Adapters
           student = find_pr_student(pr)
           pull_request = build_pr(student, pr)
           lab.pull_requests << pull_request
-          lab.save  
+          lab.save 
           pull_request      
         end
       end
 
       def build_pr_files(pr, repo_name)
-        client.pull_files("learn-co-students/#{repo_name}", pr.pr_number).each do |pr_file|
+        client.pull_files("learn-co-students/#{repo_name}", pr.pr_number).each_with_index do |pr_file, i|
           if pr_file.filename.split(".").last == "rb" || pr_file.filename.split(".").last == "js" || pr_file.filename.split(".").last == "erb"
             content = get_and_decode_content(pr_file)
             build_pr_file(pr, pr_file, content)
+            puts "built PR files no. #{i + 1}"
           end
         end
       end
