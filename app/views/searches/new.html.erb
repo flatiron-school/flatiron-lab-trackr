@@ -1,17 +1,15 @@
-<h1>Search Results (<%= @search_type %>)</h1>
-<% if @students && !@students.empty? %>
+<h1>Search Results: <%= @search.type.capitalize %></h1>
+<% if @search.results_exist? %>
   <ul>
-  <% @students.each do |student| %>
-    <li><%= link_to student.full_name, student_path(student) %></li>
-  <% end %>
-  </ul>
-<% elsif @labs && !@labs.empty? %>
-  <ul>
-  <% @labs.each do |lab| %>
-    <li><%= link_to lab.name, [lab.cohort, lab] %></li>
+  <% @search.results.each do |result| %>
+    <% if @search.type == "students" %>
+    <li><%= link_to result.full_name, student_path(result) %></li>
+    <% elsif @search.type == "labs" %>
+    <li><%= link_to result.name, cohort_lab_path(result.cohort, result) %></li>
+    <% end %>
   <% end %>
   </ul>
 <% else %>
-  <p>No <%= @search_type %> matching your query. Please revise your search term.</p>
+  <p>No <%= @search.type %> matching your query. Please revise your search term.</p>
 <% end %>
 

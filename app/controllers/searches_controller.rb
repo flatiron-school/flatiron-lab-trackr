@@ -1,12 +1,13 @@
 class SearchesController < ApplicationController
 
   def new
-    @search_type = params[:type]
-    unless params[:query].empty? || params[:query] == " "
-      if params[:type] == 'students'
-        @students = Student.where('first_name ILIKE ? OR last_name ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
+    @search = Search.new(type: params[:type], query: params[:query])
+    cohort_id = params[:cohort][:id]
+    if @search.valid?
+      if @search.type == 'students'
+        @search.results = Student.where('first_name ILIKE ? OR last_name ILIKE ?', "%#{@search.query}%", "%#{@search.query}%")
       else
-        @labs = Lab.where('name ILIKE ? AND cohort_id = ?', "%#{params[:query]}%", params[:cohort][:id])
+        @search.results = Lab.where('name ILIKE ? AND cohort_id = ?', "%#{@search.query}%", cohort_id)
       end
     end
     render 'new'
