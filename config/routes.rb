@@ -7,11 +7,6 @@ Rails.application.routes.draw do
     resources :labs, param: :slug
   end
 
-  get '/search', to: 'searches#new'
+  get '/search', to: 'searches#new', as: :search
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  # Serve websocket cable requests in-process
-  # mount Act`ionCable.server => '/cable'
 end
