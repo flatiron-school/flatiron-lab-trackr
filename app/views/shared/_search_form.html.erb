@@ -1,0 +1,9 @@
+<%= form_tag '/search', method: 'GET', class: 'navbar-form navbar-left', role: 'search' do %>
+  <%= radio_button_tag :type, 'students', checked: true %>
+  <%= label_tag :type_students, 'students', class: 'radio-label' %>
+  <%= radio_button_tag :type, 'labs' %>
+  <%= label_tag :type_labs, 'labs', class: 'radio-label' %>
+  <%= collection_select :cohort, :id, Cohort.all, :id, :name, {}, { class: 'cohort-select' } %>
+  <%= text_field_tag :query, '', class: 'form-control' %>
+  <%= submit_tag 'Search', class: 'btn btn-default' %>
+<% end %>
