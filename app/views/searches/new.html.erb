@@ -2,9 +2,9 @@
 <% if @search.results_exist? %>
   <ul>
   <% @search.results.each do |result| %>
-    <% if @search.type == "students" %>
+    <% if @search.for_students? %>
     <li><%= link_to result.full_name, student_path(result) %></li>
-    <% elsif @search.type == "labs" %>
+    <% elsif @search.for_labs? %>
     <li><%= link_to result.name, cohort_lab_path(result.cohort, result) %></li>
     <% end %>
   <% end %>
