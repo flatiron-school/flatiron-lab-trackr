@@ -33,7 +33,7 @@ group :development, :test do
   gem 'pry'
   gem 'database_cleaner'
   gem 'vcr'
-  # gem 'puffing-billy'
+  gem 'puffing-billy'
   gem 'webmock'
   gem 'rspec-retry'
   gem 'capybara-webkit'
