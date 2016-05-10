@@ -2,8 +2,9 @@ $(document).ready(function() {
   $("[data-id='lab-files']").hide();
   $("[data-id='lab-directories']").hide();
   $("[data-class='pr-file'").hide();
-  addFileSelectListener();
-  addDirectorySelectListener();
+  $("[data-menu='lab-directories']").toggleSelectMenu();
+  $("[data-menu='lab-files']").toggleSelectMenu();
+
   showAllListener();
   PRFileListener();
   directoryListener();
@@ -43,25 +44,22 @@ function directoryListener(){
   })
 }
 
-function addFileSelectListener(){
-  $("[data-id='lab-files-down']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    $("[data-id='lab-files-down']").toggleClass('rotate');
-    $("[data-id='lab-files-down']").toggleClass('rotate-reset');
-    $("[data-id='lab-files']").slideToggle("slow")
-  })
+
+
+
+$.fn.toggleSelectMenu = function(e) {
+  this.on("click", function(event){
+    event.preventDefault;
+    event.stopPropagation;
+    $(this).toggleClass('rotate');
+    $(this).toggleClass('rotate-reset');
+    
+    var dataId = $(this).data('menu')
+    $('[data-id="' + dataId + '"]').slideToggle("slow")
+  });
 }
 
-function addDirectorySelectListener(){
-  $("[data-id='lab-directories-down']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    $("[data-id='lab-directories-down']").toggleClass('rotate');
-    $("[data-id='lab-directories-down']").toggleClass('rotate-reset');
-    $("[data-id='lab-directories']").slideToggle("slow")
-  })
-}
+
 
 function showAllListener(){
   $("#show-all-prs").on("click", function(){
