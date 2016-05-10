@@ -85,3 +85,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+ENV["LAB_TRACKR_APP_URL"] = "https://flatiron-lab-trackr.herokuapp.com"

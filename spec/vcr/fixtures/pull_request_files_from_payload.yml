@@ -1,0 +1,148 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<GITHUB_USERNAME>:<GITHUB_PASSWORD>@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/pulls/31/files
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.3.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 03 May 2016 20:11:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1462309902'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"5376f2bcab99cb12c61f2a34a0c425db"
+      Last-Modified:
+      - Tue, 03 May 2016 16:29:19 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a241e1a8264a6ace03db946c85b92db3
+      X-Github-Request-Id:
+      - 6C29131C:1559F:28313E7A:572905FE
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"sha":"7b03a17fb1388036150a7dcd4f5059c0b051a42a","filename":"app/controllers/posts_controller.rb","status":"modified","additions":6,"deletions":0,"changes":6,"blob_url":"https://github.com/learn-co-students/strong-params-basics-web-0416/blob/3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff/app/controllers/posts_controller.rb","raw_url":"https://github.com/learn-co-students/strong-params-basics-web-0416/raw/3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff/app/controllers/posts_controller.rb","contents_url":"https://api.github.com/repos/learn-co-students/strong-params-basics-web-0416/contents/app/controllers/posts_controller.rb?ref=3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff","patch":"@@
+        -26,4 +26,10 @@ def update\n \tdef edit\n \t  @post = Post.find(params[:id])\n
+        \tend\n+\n+\tprivate\n+\n+\t\tdef post_params\n+\t\t\tparams.require(:post).permit(:title,
+        :content)\n+\t\tend\n end"}]'
+    http_version: 
+  recorded_at: Tue, 03 May 2016 20:11:42 GMT
+- request:
+    method: get
+    uri: https://<GITHUB_USERNAME>:<GITHUB_PASSWORD>@api.github.com/repos/learn-co-students/strong-params-basics-web-0416/contents/app/controllers/posts_controller.rb?ref=3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff&since
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.3.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 03 May 2016 20:11:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1462309902'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"7c528d8bf7911155ab4224e1123d112c"
+      Last-Modified:
+      - Tue, 03 May 2016 14:51:28 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - dc1ce2bfb41810a06c705e83b388572d
+      X-Github-Request-Id:
+      - 6C29131C:1559E:2CCA7B13:572905FE
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"posts_controller.rb","path":"app/controllers/posts_controller.rb","sha":"7b03a17fb1388036150a7dcd4f5059c0b051a42a","size":520,"url":"https://api.github.com/repos/learn-co-students/strong-params-basics-web-0416/contents/app/controllers/posts_controller.rb?ref=3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff","html_url":"https://github.com/learn-co-students/strong-params-basics-web-0416/blob/3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff/app/controllers/posts_controller.rb","git_url":"https://api.github.com/repos/learn-co-students/strong-params-basics-web-0416/git/blobs/7b03a17fb1388036150a7dcd4f5059c0b051a42a","download_url":"https://raw.githubusercontent.com/learn-co-students/strong-params-basics-web-0416/3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff/app/controllers/posts_controller.rb?token=AIlSrKzGnWGB9cO9rFV-ijmzd0xfMq35ks5XKQY6wA%3D%3D","type":"file","content":"Y2xhc3MgUG9zdHNDb250cm9sbGVyIDwgQXBwbGljYXRpb25Db250cm9sbGVy\nCglkZWYgaW5kZXgKCQlAcG9zdHMgPSBQb3N0LmFsbAoJZW5kCgoJZGVmIHNo\nb3cKCQlAcG9zdCA9IFBvc3QuZmluZChwYXJhbXNbOmlkXSkKCWVuZAoKCWRl\nZiBuZXcKCQlAcG9zdCA9IFBvc3QubmV3CgllbmQKCglkZWYgY3JlYXRlCgkg\nIEBwb3N0ID0gUG9zdC5uZXcocGFyYW1zWyJwb3N0Il0pCgkgIEBwb3N0LnNh\ndmUKCSAgcmVkaXJlY3RfdG8gcG9zdF9wYXRoKEBwb3N0KQoJZW5kCgoJZGVm\nIHVwZGF0ZQoJICBAcG9zdCA9IFBvc3QuZmluZChwYXJhbXNbOmlkXSkKCSAg\nQHBvc3QudXBkYXRlKHBhcmFtc1sicG9zdCJdKQoJICByZWRpcmVjdF90byBw\nb3N0X3BhdGgoQHBvc3QpCgllbmQKCglkZWYgZWRpdAoJICBAcG9zdCA9IFBv\nc3QuZmluZChwYXJhbXNbOmlkXSkKCWVuZAoKCXByaXZhdGUKCgkJZGVmIHBv\nc3RfcGFyYW1zCgkJCXBhcmFtcy5yZXF1aXJlKDpwb3N0KS5wZXJtaXQoOnRp\ndGxlLCA6Y29udGVudCkKCQllbmQKZW5kCg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/learn-co-students/strong-params-basics-web-0416/contents/app/controllers/posts_controller.rb?ref=3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff","git":"https://api.github.com/repos/learn-co-students/strong-params-basics-web-0416/git/blobs/7b03a17fb1388036150a7dcd4f5059c0b051a42a","html":"https://github.com/learn-co-students/strong-params-basics-web-0416/blob/3bdfaaf1addd1fc8f4f5960d87f5f5224eade4ff/app/controllers/posts_controller.rb"}}'
+    http_version: 
+  recorded_at: Tue, 03 May 2016 20:11:42 GMT
+recorded_with: VCR 3.0.1

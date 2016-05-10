@@ -1,10 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-#
-
-Student.create(first_name: 'Chris', last_name: 'Aporta', github_username: 'caporta', cohort_id: '1')
+cohort = Cohort.create(name: "web-0416")
+lab = Lab.create(name: "Strong Params Basics", 
+  repo: "https://github.com/learn-co-students/strong-params-basics-web-0416", 
+  deploy_date: Date.today, 
+  cohort: cohort)
+cohort.roster_csv_file_name = "students.csv"
+cohort.create_members
+cohort.save

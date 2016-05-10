@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :labs, param: :slug
   end
 
+  post "webhooks/pull-requests", to: "webhooks#create"
+
   get '/search', to: 'searches#new', as: :search
 
 end
