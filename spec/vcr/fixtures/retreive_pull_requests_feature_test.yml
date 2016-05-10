@@ -2,216 +2,240 @@
 http_interactions:
 - request:
     method: get
-    uri: http://127.0.0.1:61384/__identify__
+    uri: https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/vnd.github.v3+json
       User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
-      Date:
-      - Fri, 06 May 2016 13:31:02 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '70215469235580'
-    http_version: 
-  recorded_at: Fri, 06 May 2016 13:31:02 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session
-    body:
-      encoding: UTF-8
-      string: '{"desiredCapabilities":{"browserName":"firefox","version":"","platform":"ANY","javascriptEnabled":true,"cssSelectorsEnabled":true,"takesScreenshot":true,"nativeEvents":false,"rotatable":false}}'
-    headers:
-      Accept:
-      - application/json
+      - Octokit Ruby Gem 4.3.0
       Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '193'
+      - application/json
+      Authorization:
+      - Basic c29waGllLmRlYmVuZWRldHRvQGdtYWlsLmNvbTpGdms2ZGdpdg==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '452'
       Server:
-      - httpd.js
+      - GitHub.com
       Date:
-      - Fri, 06 May 2016 13:31:05 GMT
-    body:
-      encoding: UTF-8
-      string: '{"name":"newSession","sessionId":"74222b57-c910-b741-94bc-2255fae81cf8","status":0,"value":{"cssSelectorsEnabled":true,"browserName":"firefox","handlesAlerts":true,"javascriptEnabled":true,"nativeEvents":false,"platform":"Darwin","rotatable":false,"takesScreenshot":true,"version":"28.0","webStorageEnabled":true,"applicationCacheEnabled":true,"databaseEnabled":true,"locationContextEnabled":true,"browserConnectionEnabled":true,"acceptSslCerts":true}}'
-    http_version: 
-  recorded_at: Fri, 06 May 2016 13:31:06 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/74222b57-c910-b741-94bc-2255fae81cf8/url
-    body:
-      encoding: UTF-8
-      string: '{"url":"http://127.0.0.1:61384/cohorts/web-0416/labs/strong-params-basics"}'
-    headers:
-      Accept:
-      - application/json
+      - Sat, 07 May 2016 04:50:38 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '75'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '87'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 06 May 2016 13:31:08 GMT
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4417'
+      X-Ratelimit-Reset:
+      - '1462597655'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"5a63e687e7597272ce7370075cdb0c33"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a241e1a8264a6ace03db946c85b92db3
+      X-Github-Request-Id:
+      - 18BE539E:2CBC:52C4999:572D741D
     body:
-      encoding: UTF-8
-      string: '{"name":"get","sessionId":"74222b57-c910-b741-94bc-2255fae81cf8","status":0,"value":""}'
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/1","id":64084414,"html_url":"https://github.com/learn-co-students/simple-math-web-0416/pull/1","diff_url":"https://github.com/learn-co-students/simple-math-web-0416/pull/1.diff","patch_url":"https://github.com/learn-co-students/simple-math-web-0416/pull/1.patch","issue_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/issues/1","number":1,"state":"open","locked":false,"title":"Done.","user":{"login":"cjtafoya","id":16465308,"avatar_url":"https://avatars.githubusercontent.com/u/16465308?v=3","gravatar_id":"","url":"https://api.github.com/users/cjtafoya","html_url":"https://github.com/cjtafoya","followers_url":"https://api.github.com/users/cjtafoya/followers","following_url":"https://api.github.com/users/cjtafoya/following{/other_user}","gists_url":"https://api.github.com/users/cjtafoya/gists{/gist_id}","starred_url":"https://api.github.com/users/cjtafoya/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cjtafoya/subscriptions","organizations_url":"https://api.github.com/users/cjtafoya/orgs","repos_url":"https://api.github.com/users/cjtafoya/repos","events_url":"https://api.github.com/users/cjtafoya/events{/privacy}","received_events_url":"https://api.github.com/users/cjtafoya/received_events","type":"User","site_admin":false},"body":"","created_at":"2016-03-24T19:14:57Z","updated_at":"2016-03-24T19:14:57Z","closed_at":null,"merged_at":null,"merge_commit_sha":"88b1b2f2538b9c89cfd162658f13d88a978d1b8c","assignee":null,"milestone":null,"commits_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/1/commits","review_comments_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/1/comments","review_comment_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/comments{/number}","comments_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/issues/1/comments","statuses_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/statuses/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad","head":{"label":"cjtafoya:master","ref":"master","sha":"9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad","user":{"login":"cjtafoya","id":16465308,"avatar_url":"https://avatars.githubusercontent.com/u/16465308?v=3","gravatar_id":"","url":"https://api.github.com/users/cjtafoya","html_url":"https://github.com/cjtafoya","followers_url":"https://api.github.com/users/cjtafoya/followers","following_url":"https://api.github.com/users/cjtafoya/following{/other_user}","gists_url":"https://api.github.com/users/cjtafoya/gists{/gist_id}","starred_url":"https://api.github.com/users/cjtafoya/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cjtafoya/subscriptions","organizations_url":"https://api.github.com/users/cjtafoya/orgs","repos_url":"https://api.github.com/users/cjtafoya/repos","events_url":"https://api.github.com/users/cjtafoya/events{/privacy}","received_events_url":"https://api.github.com/users/cjtafoya/received_events","type":"User","site_admin":false},"repo":{"id":54667700,"name":"simple-math-web-0416","full_name":"cjtafoya/simple-math-web-0416","owner":{"login":"cjtafoya","id":16465308,"avatar_url":"https://avatars.githubusercontent.com/u/16465308?v=3","gravatar_id":"","url":"https://api.github.com/users/cjtafoya","html_url":"https://github.com/cjtafoya","followers_url":"https://api.github.com/users/cjtafoya/followers","following_url":"https://api.github.com/users/cjtafoya/following{/other_user}","gists_url":"https://api.github.com/users/cjtafoya/gists{/gist_id}","starred_url":"https://api.github.com/users/cjtafoya/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cjtafoya/subscriptions","organizations_url":"https://api.github.com/users/cjtafoya/orgs","repos_url":"https://api.github.com/users/cjtafoya/repos","events_url":"https://api.github.com/users/cjtafoya/events{/privacy}","received_events_url":"https://api.github.com/users/cjtafoya/received_events","type":"User","site_admin":false},"private":true,"html_url":"https://github.com/cjtafoya/simple-math-web-0416","description":null,"fork":true,"url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416","forks_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/forks","keys_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/keys{/key_id}","collaborators_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/teams","hooks_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/hooks","issue_events_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/issues/events{/number}","events_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/events","assignees_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/assignees{/user}","branches_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/branches{/branch}","tags_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/tags","blobs_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/git/refs{/sha}","trees_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/git/trees{/sha}","statuses_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/statuses/{sha}","languages_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/languages","stargazers_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/stargazers","contributors_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/contributors","subscribers_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/subscribers","subscription_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/subscription","commits_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/commits{/sha}","git_commits_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/git/commits{/sha}","comments_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/comments{/number}","issue_comment_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/issues/comments{/number}","contents_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/contents/{+path}","compare_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/compare/{base}...{head}","merges_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/merges","archive_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/downloads","issues_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/issues{/number}","pulls_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/pulls{/number}","milestones_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/milestones{/number}","notifications_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/labels{/name}","releases_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/releases{/id}","deployments_url":"https://api.github.com/repos/cjtafoya/simple-math-web-0416/deployments","created_at":"2016-03-24T19:12:17Z","updated_at":"2016-03-24T19:12:18Z","pushed_at":"2016-03-24T19:14:44Z","git_url":"git://github.com/cjtafoya/simple-math-web-0416.git","ssh_url":"git@github.com:cjtafoya/simple-math-web-0416.git","clone_url":"https://github.com/cjtafoya/simple-math-web-0416.git","svn_url":"https://github.com/cjtafoya/simple-math-web-0416","homepage":null,"size":14,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":false,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master"}},"base":{"label":"learn-co-students:master","ref":"master","sha":"f2ec36d64ad3cb955f47286350ee19a9fa30cfcb","user":{"login":"learn-co-students","id":8825476,"avatar_url":"https://avatars.githubusercontent.com/u/8825476?v=3","gravatar_id":"","url":"https://api.github.com/users/learn-co-students","html_url":"https://github.com/learn-co-students","followers_url":"https://api.github.com/users/learn-co-students/followers","following_url":"https://api.github.com/users/learn-co-students/following{/other_user}","gists_url":"https://api.github.com/users/learn-co-students/gists{/gist_id}","starred_url":"https://api.github.com/users/learn-co-students/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/learn-co-students/subscriptions","organizations_url":"https://api.github.com/users/learn-co-students/orgs","repos_url":"https://api.github.com/users/learn-co-students/repos","events_url":"https://api.github.com/users/learn-co-students/events{/privacy}","received_events_url":"https://api.github.com/users/learn-co-students/received_events","type":"Organization","site_admin":false},"repo":{"id":46754456,"name":"simple-math-web-0416","full_name":"learn-co-students/simple-math-web-0416","owner":{"login":"learn-co-students","id":8825476,"avatar_url":"https://avatars.githubusercontent.com/u/8825476?v=3","gravatar_id":"","url":"https://api.github.com/users/learn-co-students","html_url":"https://github.com/learn-co-students","followers_url":"https://api.github.com/users/learn-co-students/followers","following_url":"https://api.github.com/users/learn-co-students/following{/other_user}","gists_url":"https://api.github.com/users/learn-co-students/gists{/gist_id}","starred_url":"https://api.github.com/users/learn-co-students/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/learn-co-students/subscriptions","organizations_url":"https://api.github.com/users/learn-co-students/orgs","repos_url":"https://api.github.com/users/learn-co-students/repos","events_url":"https://api.github.com/users/learn-co-students/events{/privacy}","received_events_url":"https://api.github.com/users/learn-co-students/received_events","type":"Organization","site_admin":false},"private":true,"html_url":"https://github.com/learn-co-students/simple-math-web-0416","description":null,"fork":false,"url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416","forks_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/forks","keys_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/keys{/key_id}","collaborators_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/teams","hooks_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/hooks","issue_events_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/issues/events{/number}","events_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/events","assignees_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/assignees{/user}","branches_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/branches{/branch}","tags_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/tags","blobs_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/git/refs{/sha}","trees_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/git/trees{/sha}","statuses_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/statuses/{sha}","languages_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/languages","stargazers_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/stargazers","contributors_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/contributors","subscribers_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/subscribers","subscription_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/subscription","commits_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/commits{/sha}","git_commits_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/git/commits{/sha}","comments_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/comments{/number}","issue_comment_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/issues/comments{/number}","contents_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/contents/{+path}","compare_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/compare/{base}...{head}","merges_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/merges","archive_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/downloads","issues_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/issues{/number}","pulls_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls{/number}","milestones_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/milestones{/number}","notifications_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/labels{/name}","releases_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/releases{/id}","deployments_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/deployments","created_at":"2015-11-23T23:29:15Z","updated_at":"2016-04-04T14:00:48Z","pushed_at":"2016-04-04T14:00:47Z","git_url":"git://github.com/learn-co-students/simple-math-web-0416.git","ssh_url":"git@github.com:learn-co-students/simple-math-web-0416.git","clone_url":"https://github.com/learn-co-students/simple-math-web-0416.git","svn_url":"https://github.com/learn-co-students/simple-math-web-0416","homepage":null,"size":15,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":1,"mirror_url":null,"open_issues_count":1,"forks":1,"open_issues":1,"watchers":0,"default_branch":"master"}},"_links":{"self":{"href":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/1"},"html":{"href":"https://github.com/learn-co-students/simple-math-web-0416/pull/1"},"issue":{"href":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/issues/1"},"comments":{"href":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/issues/1/comments"},"review_comments":{"href":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/1/comments"},"review_comment":{"href":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/comments{/number}"},"commits":{"href":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/1/commits"},"statuses":{"href":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/statuses/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad"}}}]'
     http_version: 
-  recorded_at: Fri, 06 May 2016 13:31:08 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/74222b57-c910-b741-94bc-2255fae81cf8/elements
-    body:
-      encoding: UTF-8
-      string: '{"using":"xpath","value":".//a[./@href][(((./@id = ''get-prs-btn''
-        or normalize-space(string(.)) = ''get-prs-btn'') or ./@title = ''get-prs-btn'')
-        or .//img[./@alt = ''get-prs-btn''])]"}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '178'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '227'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 06 May 2016 13:31:08 GMT
-    body:
-      encoding: UTF-8
-      string: '{"name":"findElements","sessionId":"74222b57-c910-b741-94bc-2255fae81cf8","status":0,"value":[{"ELEMENT":"{c1354f85-dc82-f04b-80cf-8bdddd7e5988}","element-6066-11e4-a52e-4f735466cecf":"{c1354f85-dc82-f04b-80cf-8bdddd7e5988}"}]}'
-    http_version: 
-  recorded_at: Fri, 06 May 2016 13:31:08 GMT
+  recorded_at: Sat, 07 May 2016 04:50:36 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:7055/hub/session/74222b57-c910-b741-94bc-2255fae81cf8/element/%7Bc1354f85-dc82-f04b-80cf-8bdddd7e5988%7D/displayed
+    uri: https://api.github.com/repos/learn-co-students/simple-math-web-0416/pulls/1/files
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.3.0
+      Content-Type:
       - application/json
-      Cache-Control:
-      - no-cache
+      Authorization:
+      - Basic c29waGllLmRlYmVuZWRldHRvQGdtYWlsLmNvbTpGdms2ZGdpdg==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
       Server:
-      - httpd.js
+      - GitHub.com
       Date:
-      - Fri, 06 May 2016 13:31:08 GMT
+      - Sat, 07 May 2016 04:50:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4416'
+      X-Ratelimit-Reset:
+      - '1462597655'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"0764e91816c98f58e41272ee74817dd4"
+      Last-Modified:
+      - Tue, 26 Apr 2016 13:23:32 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - cee4c0729c8e9147e7abcb45b9d69689
+      X-Github-Request-Id:
+      - 18BE539E:2CBA:3754BDC:572D741E
     body:
-      encoding: UTF-8
-      string: '{"name":"isElementDisplayed","sessionId":"74222b57-c910-b741-94bc-2255fae81cf8","status":0,"value":true}'
+      encoding: ASCII-8BIT
+      string: '[{"sha":"6b67ea38b453d9986de71c24e017825086f807a3","filename":".results.json","status":"added","additions":1,"deletions":0,"changes":1,"blob_url":"https://github.com/learn-co-students/simple-math-web-0416/blob/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad/.results.json","raw_url":"https://github.com/learn-co-students/simple-math-web-0416/raw/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad/.results.json","contents_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/contents/.results.json?ref=9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad","patch":"@@
+        -0,0 +1 @@\n+{\"version\":\"3.4.1\",\"examples\":[{\"description\":\"adds
+        two numbers together\",\"full_description\":\"#addition adds two numbers together\",\"status\":\"passed\",\"file_path\":\"./spec/math_spec.rb\",\"line_number\":4,\"run_time\":0.000527,\"pending_message\":null},{\"description\":\"subtracts
+        two numbers from each other\",\"full_description\":\"#subtraction subtracts
+        two numbers from each other\",\"status\":\"passed\",\"file_path\":\"./spec/math_spec.rb\",\"line_number\":10,\"run_time\":8.4e-05,\"pending_message\":null},{\"description\":\"divides
+        one number by another\",\"full_description\":\"#division divides one number
+        by another\",\"status\":\"passed\",\"file_path\":\"./spec/math_spec.rb\",\"line_number\":16,\"run_time\":0.000125,\"pending_message\":null},{\"description\":\"multiplies
+        two numbers together\",\"full_description\":\"#multiplication multiplies two
+        numbers together\",\"status\":\"passed\",\"file_path\":\"./spec/math_spec.rb\",\"line_number\":22,\"run_time\":7.2e-05,\"pending_message\":null},{\"description\":\"returns
+        the remainder of two numbers\",\"full_description\":\"#modulo returns the
+        remainder of two numbers\",\"status\":\"passed\",\"file_path\":\"./spec/math_spec.rb\",\"line_number\":28,\"run_time\":0.000128,\"pending_message\":null},{\"description\":\"returns
+        the square root of a number\",\"full_description\":\"#square_root returns
+        the square root of a number\",\"status\":\"passed\",\"file_path\":\"./spec/math_spec.rb\",\"line_number\":34,\"run_time\":9.3e-05,\"pending_message\":null},{\"description\":\"uses
+        parenthesis to set the order of operations properly\",\"full_description\":\"order_of_operations
+        uses parenthesis to set the order of operations properly\",\"status\":\"passed\",\"file_path\":\"./spec/math_spec.rb\",\"line_number\":40,\"run_time\":7.0e-05,\"pending_message\":null}],\"summary\":{\"duration\":0.00247,\"example_count\":7,\"failure_count\":0,\"pending_count\":0},\"summary_line\":\"7
+        examples, 0 failures\"}\n\\ No newline at end of file"},{"sha":"d0571d212f28dc41a74bf3c452ab726a84997705","filename":"lib/math.rb","status":"modified","additions":7,"deletions":1,"changes":8,"blob_url":"https://github.com/learn-co-students/simple-math-web-0416/blob/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad/lib/math.rb","raw_url":"https://github.com/learn-co-students/simple-math-web-0416/raw/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad/lib/math.rb","contents_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/contents/lib/math.rb?ref=9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad","patch":"@@
+        -1,21 +1,27 @@\n def addition(num1, num2)\n+  num1+num2\n end\n \n def subtraction(num1,
+        num2)\n+  num1-num2\n end\n \n def division(num1, num2)\n+  num1/num2\n end\n
+        \n def multiplication(num1, num2)\n+  num1*num2\n end\n \n def modulo(num1,
+        num2)\n+  num1%num2\n end\n \n def square_root(num)\n+  Math.sqrt(num)\n end\n
+        \n def order_of_operation(num1, num2, num3, num4)\n-  #Hint:  __ + (( __ *
+        __ ) / __ )\n+  num1 + (( num2 * num3 ) / num4 )\n end"}]'
     http_version: 
-  recorded_at: Fri, 06 May 2016 13:31:08 GMT
+  recorded_at: Sat, 07 May 2016 04:50:36 GMT
 - request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/74222b57-c910-b741-94bc-2255fae81cf8/element/%7Bc1354f85-dc82-f04b-80cf-8bdddd7e5988%7D/click
+    method: get
+    uri: https://api.github.com/repos/learn-co-students/simple-math-web-0416/contents/lib/math.rb?ref=9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad&since
     body:
-      encoding: UTF-8
-      string: "{}"
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.3.0
+      Content-Type:
       - application/json
-      Content-Length:
-      - '2'
+      Authorization:
+      - Basic c29waGllLmRlYmVuZWRldHRvQGdtYWlsLmNvbTpGdms2ZGdpdg==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '98'
       Server:
-      - httpd.js
+      - GitHub.com
       Date:
-      - Fri, 06 May 2016 13:31:08 GMT
+      - Sat, 07 May 2016 04:50:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4415'
+      X-Ratelimit-Reset:
+      - '1462597655'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"3630bda5e47ae857a4f91fdb32fb5be0"
+      Last-Modified:
+      - Thu, 24 Mar 2016 19:14:43 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a30e6f9aa7cf5731b87dfb3b9992202d
+      X-Github-Request-Id:
+      - 18BE539E:2CBC:52C49FB:572D741E
     body:
-      encoding: UTF-8
-      string: '{"name":"clickElement","sessionId":"74222b57-c910-b741-94bc-2255fae81cf8","status":0,"value":"ok"}'
+      encoding: ASCII-8BIT
+      string: '{"name":"math.rb","path":"lib/math.rb","sha":"d0571d212f28dc41a74bf3c452ab726a84997705","size":346,"url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/contents/lib/math.rb?ref=9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad","html_url":"https://github.com/learn-co-students/simple-math-web-0416/blob/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad/lib/math.rb","git_url":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/git/blobs/d0571d212f28dc41a74bf3c452ab726a84997705","download_url":"https://raw.githubusercontent.com/learn-co-students/simple-math-web-0416/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad/lib/math.rb?token=AIlSrGHmJ3Cu6F8eHmc-dX-lf74Ds_eKks5XLXRawA%3D%3D","type":"file","content":"ZGVmIGFkZGl0aW9uKG51bTEsIG51bTIpCiAgbnVtMStudW0yCmVuZAoKZGVm\nIHN1YnRyYWN0aW9uKG51bTEsIG51bTIpCiAgbnVtMS1udW0yCmVuZAoKZGVm\nIGRpdmlzaW9uKG51bTEsIG51bTIpCiAgbnVtMS9udW0yCmVuZAoKZGVmIG11\nbHRpcGxpY2F0aW9uKG51bTEsIG51bTIpCiAgbnVtMSpudW0yCmVuZAoKZGVm\nIG1vZHVsbyhudW0xLCBudW0yKQogIG51bTElbnVtMgplbmQKCmRlZiBzcXVh\ncmVfcm9vdChudW0pCiAgTWF0aC5zcXJ0KG51bSkKZW5kCgpkZWYgb3JkZXJf\nb2Zfb3BlcmF0aW9uKG51bTEsIG51bTIsIG51bTMsIG51bTQpCiAgbnVtMSAr\nICgoIG51bTIgKiBudW0zICkgLyBudW00ICkKZW5kCg==\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/contents/lib/math.rb?ref=9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad","git":"https://api.github.com/repos/learn-co-students/simple-math-web-0416/git/blobs/d0571d212f28dc41a74bf3c452ab726a84997705","html":"https://github.com/learn-co-students/simple-math-web-0416/blob/9769cd1e7fc2d929d313ed6f90dc8ce8fd54d9ad/lib/math.rb"}}'
     http_version: 
-  recorded_at: Fri, 06 May 2016 13:31:08 GMT
+  recorded_at: Sat, 07 May 2016 04:50:37 GMT
 recorded_with: VCR 3.0.1
