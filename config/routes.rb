@@ -3,14 +3,12 @@ Rails.application.routes.draw do
   resources :pull_request_files
   resources :pull_requests
   resources :students, param: :slug
-
   resources :cohorts, param: :slug do
     resources :labs, param: :slug
   end
 
   post "webhooks/pull-requests", to: "webhooks#create"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # Serve websocket cable requests in-process
-  # mount Act`ionCable.server => '/cable'
+  get '/search', to: 'searches#new', as: :search
+
 end

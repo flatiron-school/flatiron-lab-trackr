@@ -20,6 +20,8 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 gem 'sidekiq'
+# gem 'concurrent-ruby-edge', require: 'concurrent-edge'
+# gem 'concurrent-ruby', require: 'concurrent'
 # gem 'bcrypt', '~> 3.1.7'
 
 # gem 'capistrano-rails', group: :development
@@ -29,16 +31,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'pry'
-  gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'vcr'
-  gem 'puffing-billy'
+  # gem 'puffing-billy'
+  gem 'webmock'
   gem 'rspec-retry'
   gem 'capybara-webkit'
-  # gem 'poltergeist'
 end
 
-gem 'webmock', group: :test 
 group :development do
   gem 'web-console', '~> 3.0'
   gem 'listen', '~> 3.0.5'

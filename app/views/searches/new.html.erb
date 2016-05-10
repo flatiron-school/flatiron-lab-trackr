@@ -1,0 +1,15 @@
+<h1>Search Results: <%= @search.type.capitalize %></h1>
+<% if @search.results_exist? %>
+  <ul>
+  <% @search.results.each do |result| %>
+    <% if @search.for_students? %>
+    <li><%= link_to result.full_name, student_path(result) %></li>
+    <% elsif @search.for_labs? %>
+    <li><%= link_to result.name, cohort_lab_path(result.cohort, result) %></li>
+    <% end %>
+  <% end %>
+  </ul>
+<% else %>
+  <p>No <%= @search.type %> matching your query. Please revise your search term.</p>
+<% end %>
+
