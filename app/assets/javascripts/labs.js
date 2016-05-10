@@ -1,19 +1,41 @@
 $(document).ready(function() {
-  $("[data-id='lab-files']").hide();
-  $("[data-id='lab-directories']").hide();
-  $("[data-class='pr-file'").hide();
+  hidePRs();
   $("[data-menu='lab-directories']").toggleSelectMenu();
   $("[data-menu='lab-files']").toggleSelectMenu();
-
+  $("[data-submit='directories']").showSelected();
   showAllListener();
   PRFileListener();
-  directoryListener();
+  // directoryListener();
 
 })
 
+function hidePRs(){
+  $("[data-id='lab-files']").hide();
+  $("[data-id='lab-directories']").hide();
+  $("[data-class='pr-file'").hide();
+}
+
+
+$.fn.showSelected = function(e) {
+  this.on("click", function(event){
+    event.preventDefault;
+    event.stopPropagation;
+    var selectType = $(this).data('submit');
+    var fileNames = $("[data-id='selected-" + selectType + "']:checked").map(function(i, box){
+      var dataSelectId = box.value
+      debugger;
+      $("[data-directory='" + dataSelectId + "'][style='display: none;']").slideToggle('slow')
+    })
+
+    var fileNames = $("[data-id='selected-" + selectType + "']:not(:checked)").map(function(i, box){
+      var dataSelectId = box.value
+      $("[data-directory='" + dataSelectId + "'][style='display: block;']").toggleClass('hidden')
+    })
+  });
+}
 
 function PRFileListener(){
-  $("[data-id='lab-files-submit']").on("click", function(e){
+  $("[data-submit='files']").on("click", function(e){
     e.preventDefault;
     e.stopPropagation;
     var fileNames = $("[data-id='selected-files']:checked").map(function(i, box){
@@ -28,21 +50,21 @@ function PRFileListener(){
   })
 }
 
-function directoryListener(){
-  $("[data-id='lab-directories-submit']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    var fileNames = $("[data-id='selected-directories']:checked").map(function(i, box){
-      var dataId = box.value
-      $("[data-directory='" + dataId + "'][style='display: none;']").slideToggle('slow')
-    })
+// function directoryListener(){
+//   $("[data-submit='directories']").on("click", function(e){
+//     e.preventDefault;
+//     e.stopPropagation;
+//     var fileNames = $("[data-id='selected-directories']:checked").map(function(i, box){
+//       var dataId = box.value
+//       $("[data-directory='" + dataId + "'][style='display: none;']").slideToggle('slow')
+//     })
 
-    var fileNames = $("[data-id='selected-directories']:not(:checked)").map(function(i, box){
-      var dataId = box.value
-      $("[data-directory='" + dataId + "'][style='display: block;']").toggleClass('hidden')
-    })
-  })
-}
+//     var fileNames = $("[data-id='selected-directories']:not(:checked)").map(function(i, box){
+//       var dataId = box.value
+//       $("[data-directory='" + dataId + "'][style='display: block;']").toggleClass('hidden')
+//     })
+//   })
+// }
 
 
 
