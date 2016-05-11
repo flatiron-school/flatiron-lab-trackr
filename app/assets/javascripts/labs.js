@@ -3,10 +3,9 @@ $(document).ready(function() {
   $("[data-menu='lab-directories']").toggleSelectMenu();
   $("[data-menu='lab-files']").toggleSelectMenu();
   $("[data-submit='directories']").showSelected();
+  $("[data-submit='files']").showSelected();
   showAllListener();
-  PRFileListener();
-  // directoryListener();
-
+  
 })
 
 function hidePRs(){
@@ -23,50 +22,15 @@ $.fn.showSelected = function(e) {
     var selectType = $(this).data('submit');
     var fileNames = $("[data-id='selected-" + selectType + "']:checked").map(function(i, box){
       var dataSelectId = box.value
-      debugger;
-      $("[data-directory='" + dataSelectId + "'][style='display: none;']").slideToggle('slow')
+      $("[data-" + selectType + "='" + dataSelectId + "'][style='display: none;']").slideToggle('slow')
     })
 
     var fileNames = $("[data-id='selected-" + selectType + "']:not(:checked)").map(function(i, box){
       var dataSelectId = box.value
-      $("[data-directory='" + dataSelectId + "'][style='display: block;']").toggleClass('hidden')
+      $("[data-" + selectType + "='" + dataSelectId + "'][style='display: block;']").toggleClass('hidden')
     })
   });
 }
-
-function PRFileListener(){
-  $("[data-submit='files']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    var fileNames = $("[data-id='selected-files']:checked").map(function(i, box){
-      var dataId = box.value
-      $("[data-id='" + dataId + "'][style='display: none;']").slideToggle('slow')
-    })
-
-    var fileNames = $("[data-id='selected-files']:not(:checked)").map(function(i, box){
-      var dataId = box.value
-      $("[data-id='" + dataId + "'][style='display: block;']").toggleClass('hidden')
-    })
-  })
-}
-
-// function directoryListener(){
-//   $("[data-submit='directories']").on("click", function(e){
-//     e.preventDefault;
-//     e.stopPropagation;
-//     var fileNames = $("[data-id='selected-directories']:checked").map(function(i, box){
-//       var dataId = box.value
-//       $("[data-directory='" + dataId + "'][style='display: none;']").slideToggle('slow')
-//     })
-
-//     var fileNames = $("[data-id='selected-directories']:not(:checked)").map(function(i, box){
-//       var dataId = box.value
-//       $("[data-directory='" + dataId + "'][style='display: block;']").toggleClass('hidden')
-//     })
-//   })
-// }
-
-
 
 
 $.fn.toggleSelectMenu = function(e) {

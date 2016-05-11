@@ -1,4 +1,4 @@
-<div class="panel panel-default student-<%= pull_request_file.student.id %>" data-class="pr-file" data-id="<%=pull_request_file.filename_without_path%>" data-directory="<%=pull_request_file.filepath%>"data-student="<%=pull_request_file.student.id%>" data-pr-parent="<%=pull_request_file.pull_request.id%>">
+<div class="panel panel-default student-<%= pull_request_file.student.id %>" data-class="pr-file" data-files="<%=pull_request_file.filename_without_path%>" data-directories="<%=pull_request_file.filepath%>"data-student="<%=pull_request_file.student.id%>" data-pr-parent="<%=pull_request_file.pull_request.id%>">
   <div class="panel-heading"><h4 class="panel-title"><%=pull_request_file.name %></h4></div>
   <div class="panel-body">
    <pre class="prettyprint lang-ruby linenums"><code><%= pull_request_file.content %></code></pre>
