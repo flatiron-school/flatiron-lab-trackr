@@ -15,7 +15,6 @@ OCTO_TOKEN: <XXXXXXXXXXXXXXXXX>
 GITHUB_USERNAME: <XXXXXXXXXXXXXXX>
 GITHUB_PASSWORD: <XXXXXXXXXXXXXX>
 ```
-* IMPORTANT: Test suite uses Puffing Billy gem to stub API calls made from the client-side. THIS GEM IS NOT WORKING WITH RAILS 5 BETA 4. To run the test suite, make sure the Puffing Billy gem is uncommented out in the Gemfile, bundle install then run rspec. To run the server in development, comment out the Puffing Billy gem and bundle install. 
 
 ### Tips
 
