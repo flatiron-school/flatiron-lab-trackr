@@ -26,11 +26,11 @@ gem 'sidekiq'
 
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+group :test do
   gem 'byebug'
+  gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
-  gem 'pry'
   gem 'database_cleaner'
   gem 'vcr'
   gem 'puffing-billy'

@@ -1,67 +1,51 @@
 $(document).ready(function() {
+  hidePRs();
+  $("[data-menu='lab-directories']").toggleSelectMenu();
+  $("[data-menu='lab-files']").toggleSelectMenu();
+  $("[data-submit='directories']").showSelected();
+  $("[data-submit='files']").showSelected();
+  showAllListener();
+  
+})
+
+function hidePRs(){
   $("[data-id='lab-files']").hide();
   $("[data-id='lab-directories']").hide();
   $("[data-class='pr-file'").hide();
-  addFileSelectListener();
-  addDirectorySelectListener();
-  showAllListener();
-  PRFileListener();
-  directoryListener();
-
-})
-
-
-function PRFileListener(){
-  $("[data-id='lab-files-submit']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    var fileNames = $("[data-id='selected-files']:checked").map(function(i, box){
-      var dataId = box.value
-      $("[data-id='" + dataId + "'][style='display: none;']").slideToggle('slow')
-    })
-
-    var fileNames = $("[data-id='selected-files']:not(:checked)").map(function(i, box){
-      var dataId = box.value
-      $("[data-id='" + dataId + "'][style='display: block;']").toggleClass('hidden')
-    })
-  })
 }
 
-function directoryListener(){
-  $("[data-id='lab-directories-submit']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    var fileNames = $("[data-id='selected-directories']:checked").map(function(i, box){
-      var dataId = box.value
-      $("[data-directory='" + dataId + "'][style='display: none;']").slideToggle('slow')
+
+$.fn.showSelected = function(e) {
+  this.on("click", function(event){
+    event.preventDefault;
+    event.stopPropagation;
+    var selectType = $(this).data('submit');
+    var fileNames = $("[data-id='selected-" + selectType + "']:checked").map(function(i, box){
+      var dataSelectId = box.value
+      $("[data-" + selectType + "='" + dataSelectId + "'][style='display: none;']").slideToggle('slow')
     })
 
-    var fileNames = $("[data-id='selected-directories']:not(:checked)").map(function(i, box){
-      var dataId = box.value
-      $("[data-directory='" + dataId + "'][style='display: block;']").toggleClass('hidden')
+    var fileNames = $("[data-id='selected-" + selectType + "']:not(:checked)").map(function(i, box){
+      var dataSelectId = box.value
+      $("[data-" + selectType + "='" + dataSelectId + "'][style='display: block;']").toggleClass('hidden')
     })
-  })
+  });
 }
 
-function addFileSelectListener(){
-  $("[data-id='lab-files-down']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    $("[data-id='lab-files-down']").toggleClass('rotate');
-    $("[data-id='lab-files-down']").toggleClass('rotate-reset');
-    $("[data-id='lab-files']").slideToggle("slow")
-  })
+
+$.fn.toggleSelectMenu = function(e) {
+  this.on("click", function(event){
+    event.preventDefault;
+    event.stopPropagation;
+    $(this).toggleClass('rotate');
+    $(this).toggleClass('rotate-reset');
+    
+    var dataId = $(this).data('menu')
+    $('[data-id="' + dataId + '"]').slideToggle("slow")
+  });
 }
 
-function addDirectorySelectListener(){
-  $("[data-id='lab-directories-down']").on("click", function(e){
-    e.preventDefault;
-    e.stopPropagation;
-    $("[data-id='lab-directories-down']").toggleClass('rotate');
-    $("[data-id='lab-directories-down']").toggleClass('rotate-reset');
-    $("[data-id='lab-directories']").slideToggle("slow")
-  })
-}
+
 
 function showAllListener(){
   $("#show-all-prs").on("click", function(){
