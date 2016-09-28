@@ -1,4 +1,4 @@
-# Flatiron Lab Trackr
+# [Flatiron Lab Trackr](http://flatiron-lab-trackr.herokuapp.com/)
 
 A Rails app for Flatiron instructors to aggregate student PRs and review student code. You can add a lab to your cohort and grab that lab's PRs. View all PRs for a given lab or view all PRs for a given student. Toggle PR view by directory or file to better compare student's work in various areas. 
 
